@@ -19,16 +19,16 @@ I am a Ph.D. student in the Smart Infrastructure Laboratory at Yonsei University
 
 ## Skills & Technologies
 
-<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
-  <span style="background-color: #e1f5fe; color: #0288d1; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">Python</span>
-  <span style="background-color: #e8f5e9; color: #388e3c; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">PyTorch</span>
-  <span style="background-color: #fff3e0; color: #f57c00; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">LangChain</span>
-  <span style="background-color: #ffebee; color: #d32f2f; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">RAG</span>
-  <span style="background-color: #e1f5fe; color: #0288d1; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">PyQt</span>
-  <span style="background-color: #e8f5e9; color: #388e3c; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">Docker</span>
-  <span style="background-color: #fff3e0; color: #f57c00; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">BIM</span>
-  <span style="background-color: #ffebee; color: #d32f2f; padding: 5px 10px; border-radius: 15px; font-size: 0.8em;">Axolotl</span>
-</div>
+- 🐍 **Python** - Advanced
+- 🔥 **PyTorch** - Advanced
+- 🔍 **RAG Systems** - Expert
+- 🔗 **LangChain** - Advanced
+- 🖥️ **PyQt** - Intermediate
+- 🐳 **Docker** - Advanced
+- 🏗️ **BIM** - Advanced
+- 🦎 **Axolotl** - Advanced
+- 🦾 **RobotStudio** - Intermediate
+
 
 ## Education
 
@@ -72,3 +72,7 @@ I am a Ph.D. student in the Smart Infrastructure Laboratory at Yonsei University
 - **Eugene Concrete Slump Prediction Framework Development** (March 2023 - Present)  
   *Software and Deep Learning Model Developer*  
   Creating predictive models for concrete properties to improve quality control in batching plants
+
+- **ABB Robot-Based Automated Vane Testing System for Material Rheology** (2023)  
+*Robot Programming Specialist*  
+Developed control systems for an ABB robotic arm equipped with cameras and depth sensors to perform automated vane testing for precise measurement of construction material properties

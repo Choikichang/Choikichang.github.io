@@ -35,3 +35,13 @@ A framework development project for automatically monitoring and predicting the 
 - **User-Friendly Interface**: Created a GUI application using PyQt and Docker that can be easily used by non-experts
 - **Deep Learning Model Implementation**: Trained and optimized CNN models for visual recognition of concrete properties
 - **Real Environment Deployment**: Successfully deployed the system in operational concrete batching plants
+
+## Robot-Based Automated Vane Testing System for Material Rheology
+
+A research project utilizing ABB robot technology to automate vane testing for precise rheological measurements of construction materials. The system combines computer vision and robotics to identify testing points and execute controlled rotational movements.
+
+- **Computer Vision Integration**: Implemented end-effector camera and depth sensor systems to detect materials and testing points autonomously
+- **Robot Programming**: Developed code for the ABB robot to perform precise, consistent rotational movements required for vane testing
+- **Rheological Measurement**: Created a system that maintains constant rotation speed for accurate determination of material properties
+- **Automation Workflow**: Designed the end-to-end process from material detection to data collection and analysis
+
