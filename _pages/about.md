@@ -19,15 +19,7 @@ I am a Ph.D. student in the Smart Infrastructure Laboratory at Yonsei University
 
 ## Skills & Technologies
 
-- 🐍 **Python** - Advanced
-- 🔥 **PyTorch** - Advanced
-- 🔍 **RAG Systems** - Expert
-- 🔗 **LangChain** - Advanced
-- 🖥️ **PyQt** - Intermediate
-- 🐳 **Docker** - Advanced
-- 🏗️ **BIM** - Advanced
-- 🦎 **Axolotl** - Advanced
-- 🦾 **RobotStudio** - Intermediate
+🐍 **Python** 🔥 **PyTorch** 🔍 **RAG Systems** 🔗 **LangChain** 🖥️ **PyQt** 🐳 **Docker** 🏗️ **BIM** 🦎 **Axolotl** 🦾 **RobotStudio**
 
 
 ## Education
