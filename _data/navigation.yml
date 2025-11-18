@@ -8,9 +8,6 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "🇰🇷 한국어"
-    url: /ko/
-
   - title: "CV"
     url: /files/CV.pdf
 
