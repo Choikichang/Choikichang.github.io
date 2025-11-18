@@ -51,6 +51,8 @@ I am a Ph.D. student in the Smart Infrastructure Laboratory at Yonsei University
 
 2. **Choi, K**., Baek, S., Kim, H. "2024 Regular Academic Conference", Korea Institute of Construction Engineering and Management, Jeju, Korea (November 2024) - Oral Presentation
 
+3. **Choi, K**., Baek, S., Ma, J., Kim, H. Efficient RAG(Retrieval-Augmented Generation) for Construction in Low-Resource Language, In ISARC. Proceedings of the International Symposium on Automation and Robotics in Construction - Oral Presentation
+
 ## Projects
 
 - **Autonomous Evolutionary AI-Based Smart Sensing Platform for Early Detection and Proactive Response to Levee Failures** (August 2024 - Present)  
