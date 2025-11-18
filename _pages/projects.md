@@ -7,6 +7,10 @@ author_profile: true
 
 {% include base_path %}
 
+<div style="text-align: right; margin-bottom: 1em;">
+  <a href="/ko/projects/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇰🇷 한국어</a>
+</div>
+
 ## Autonomous Evolutionary AI-Based Smart Sensing Platform for Levee Failures (MANTA)
 
 An AI-based system development project for early detection and prediction of levee failures. This project focuses on creating accurate water level forecasting models that can operate effectively even in locations with limited historical data.

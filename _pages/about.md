@@ -2,11 +2,14 @@
 permalink: /
 title: "🏗️Hello I'm Kichang Choi"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
+<div style="text-align: right; margin-bottom: 1em;">
+  <a href="/ko/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇰🇷 한국어</a>
+</div>
 
 ## About Me
 

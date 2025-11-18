@@ -5,13 +5,16 @@ author_profile: true
 lang: ko
 ---
 
+<div style="text-align: right; margin-bottom: 1em;">
+  <a href="/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇺🇸 English</a>
+</div>
 
 ## 소개
 
-저는 연세대학교 스마트인프라연구실에서 김홍조 교수님의 지도하에 박사과정을 밟고 있습니다. 인공지능과 딥러닝을 건설공학 분야에 적용하는 연구를 하고 있으며, 특히 다음 분야에 관심이 있습니다:
+연세대학교 스마트인프라연구실 소속 박사과정 학생으로, 김홍조 교수님의 지도 아래 연구를 진행하고 있습니다. AI와 Deep Learning 기술을 건설공학 분야에 적용하는 연구를 수행하고 있으며, 특히 다음 분야에 집중하고 있습니다:
 
-- 건설 도메인에서의 검색 증강 생성(RAG)
-- 건설 지식 표현을 위한 임베딩 모델
+- 건설 도메인 특화 Retrieval Augmented Generation (RAG)
+- 건설 지식 표현을 위한 Embedding Model
 - AI 기반 센싱 플랫폼을 활용한 제방 붕괴 예측
 - 3D 프린팅 및 품질 관리를 위한 콘크리트 유변학적 특성 검출
 
@@ -22,13 +25,13 @@ lang: ko
 
 ## 학력
 
-- **건설환경공학 박사과정** (2023년 3월 - 현재)
-  연세대학교, 서울, 대한민국
+- **건설환경공학과 박사과정** (2023.03 - 현재)
+  연세대학교, 서울
   지도교수: 김홍조 교수
   학점: 4.09/4.5
 
-- **건축공학 학사** (2013년 3월 - 2019년 2월)
-  단국대학교, 용인, 대한민국
+- **건축공학과 학사** (2013.03 - 2019.02)
+  단국대학교, 용인
   학점: 3.43/4.5
 
 ## 논문
@@ -45,26 +48,26 @@ lang: ko
 
 ## 학회 발표
 
-1. Chern, W.C., **Choi, K**., Asari, V., Kim, H. "The 10th International Conference on Construction Engineering and Project Management", ICCEPM, 일본 삿포로 (2024년 7월) - 구두 발표
+1. Chern, W.C., **Choi, K**., Asari, V., Kim, H. "The 10th International Conference on Construction Engineering and Project Management", ICCEPM, 삿포로, 일본 (2024.07) - 구두 발표
 
-2. **Choi, K**., Baek, S., Kim, H. "2024 정기 학술대회", 한국건설관리학회, 제주, 대한민국 (2024년 11월) - 구두 발표
+2. **Choi, K**., Baek, S., Kim, H. "2024 정기 학술대회", 한국건설관리학회, 제주 (2024.11) - 구두 발표
 
-3. **Choi, K**., Baek, S., Ma, J., Kim, H. 저자원 언어를 위한 건설 분야 효율적 RAG(검색 증강 생성), ISARC. Proceedings of the International Symposium on Automation and Robotics in Construction - 구두 발표
+3. **Choi, K**., Baek, S., Ma, J., Kim, H. "Efficient RAG(Retrieval-Augmented Generation) for Construction in Low-Resource Language", ISARC. Proceedings of the International Symposium on Automation and Robotics in Construction - 구두 발표
 
 ## 프로젝트
 
-- **제방 붕괴 조기 감지 및 선제적 대응을 위한 자율 진화형 AI 기반 스마트 센싱 플랫폼** (2024년 8월 - 현재)
+- **제방 붕괴 조기 감지 및 선제적 대응을 위한 자율 진화형 AI 기반 스마트 센싱 플랫폼** (2024.08 - 현재)
   *프로젝트 매니저*
   제방 붕괴 가능성을 모니터링하고 조기 경보하는 AI 기반 시스템 개발
 
-- **Construct-Rag: 청크 블록 기반 텍스트를 사용한 대조 문장 학습 및 검색** (2024)
+- **Construct-RAG: Contrastive Sentence Training & Retrieval Using Chunk Block-Based Text** (2024)
   *프로젝트 매니저*
-  데이터 생성 및 임베딩 모델 파인튜닝
+  Dataset 생성 및 Embedding Model Fine-tuning
 
-- **Eugene 콘크리트 슬럼프 예측 프레임워크 개발** (2023년 3월 - 현재)
-  *소프트웨어 및 딥러닝 모델 개발자*
+- **Eugene 콘크리트 슬럼프 예측 프레임워크 개발** (2023.03 - 현재)
+  *Software 및 Deep Learning Model 개발자*
   배칭 플랜트의 품질 관리를 개선하기 위한 콘크리트 특성 예측 모델 개발
 
-- **ABB 로봇 기반 자동화 베인 테스팅 시스템** (2023)
+- **ABB 로봇 기반 자동화 Vane Testing 시스템** (2023)
   *로봇 프로그래밍 전문가*
-  카메라와 깊이 센서가 장착된 ABB 로봇 팔의 제어 시스템을 개발하여 건설 자재 특성의 정밀 측정을 위한 자동 베인 테스트 수행
+  카메라와 Depth Sensor가 장착된 ABB 로봇의 제어 시스템을 개발하여 건설 재료 특성의 정밀 측정을 위한 자동화 Vane Test 수행
