@@ -8,12 +8,7 @@ lang: ko
 
 {% include base_path %}
 
-<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5em; flex-wrap: wrap; gap: 10px;">
-  <nav style="display: flex; gap: 10px;">
-    <a href="/ko/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">소개</a>
-    <a href="/ko/publications/" style="padding: 0.5em 1em; background-color: #007bff; color: white; border-radius: 5px; text-decoration: none;">논문</a>
-    <a href="/ko/projects/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">프로젝트</a>
-  </nav>
+<div style="text-align: right; margin-bottom: 1em;">
   <a href="/publications/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇺🇸 English</a>
 </div>
 
@@ -28,7 +23,7 @@ lang: ko
     <p style="color: #666; margin-bottom: 10px;"><strong>Choi, K.</strong>, Jeong, M., Shin, Y., Ma, J., Kim, K., & Kim, H. (2025)</p>
     <p style="color: #28a745; font-weight: bold;"><em>Automation in Construction</em></p>
     <p style="margin-top: 15px;">
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5205959" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">📄 논문 보기</a>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0926580525007897" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">📄 논문 보기</a>
     </p>
   </div>
 </div>

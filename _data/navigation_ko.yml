@@ -1,0 +1,11 @@
+# Korean navigation - used when page.lang == "ko"
+
+main:
+  - title: "CV"
+    url: /files/CV.pdf
+
+  - title: "논문"
+    url: /ko/publications/
+
+  - title: "프로젝트"
+    url: /ko/projects/

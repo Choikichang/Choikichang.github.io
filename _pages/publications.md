@@ -22,7 +22,7 @@ author_profile: true
     <p style="color: #666; margin-bottom: 10px;"><strong>Choi, K.</strong>, Jeong, M., Shin, Y., Ma, J., Kim, K., & Kim, H. (2025)</p>
     <p style="color: #28a745; font-weight: bold;"><em>Automation in Construction</em></p>
     <p style="margin-top: 15px;">
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5205959" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">📄 Paper</a>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0926580525007897" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">📄 Paper</a>
     </p>
   </div>
 </div>

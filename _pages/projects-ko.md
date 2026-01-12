@@ -8,12 +8,7 @@ lang: ko
 
 {% include base_path %}
 
-<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5em; flex-wrap: wrap; gap: 10px;">
-  <nav style="display: flex; gap: 10px;">
-    <a href="/ko/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">소개</a>
-    <a href="/ko/publications/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">논문</a>
-    <a href="/ko/projects/" style="padding: 0.5em 1em; background-color: #007bff; color: white; border-radius: 5px; text-decoration: none;">프로젝트</a>
-  </nav>
+<div style="text-align: right; margin-bottom: 1em;">
   <a href="/projects/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇺🇸 English</a>
 </div>
 
