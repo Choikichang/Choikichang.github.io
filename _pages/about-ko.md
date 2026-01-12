@@ -5,7 +5,12 @@ author_profile: true
 lang: ko
 ---
 
-<div style="text-align: right; margin-bottom: 1em;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5em; flex-wrap: wrap; gap: 10px;">
+  <nav style="display: flex; gap: 10px;">
+    <a href="/ko/" style="padding: 0.5em 1em; background-color: #007bff; color: white; border-radius: 5px; text-decoration: none;">소개</a>
+    <a href="/ko/publications/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">논문</a>
+    <a href="/ko/projects/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">프로젝트</a>
+  </nav>
   <a href="/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇺🇸 English</a>
 </div>
 
@@ -36,7 +41,7 @@ lang: ko
 
 ## 논문
 
-1. **Choi, K**., Jeong, M., Shin, Y., Ma, J., Kim, K., & Kim, H. (2025). "Construct-Rag: Contrastive Sentence Training & Retrieval Using Chunk Block-Based Text for Rag", Available at SSRN 5205959.
+1. **Choi, K**., Jeong, M., Shin, Y., Ma, J., Kim, K., & Kim, H. (2025). "Retrieval Optimization for Construction Documents in Low-Resource Languages Using Contrastive Sentence Generation and Matryoshka Representation Learning", *Automation in Construction*.
 
 2. Idrees, S., Nugraha, J.A., Tahir, S., **Choi, K**., Choi, J., Ryu, D.H., Kim, J.H. (2024). "Automatic concrete slump prediction of concrete batching plant by deep learning", DEVELOPMENTS IN THE BUILT ENVIRONMENT
 
@@ -56,9 +61,10 @@ lang: ko
 
 ## 프로젝트
 
-- **제방 붕괴 조기 감지 및 선제적 대응을 위한 자율 진화형 AI 기반 스마트 센싱 플랫폼** (2024.08 - 현재)
+- **제방 붕괴 조기 감지 및 선제적 대응을 위한 자율 진화형 AI 기반 스마트 센싱 플랫폼 (MANTA)** (2024.08 - 현재)
   *프로젝트 매니저*
   제방 붕괴 가능성을 모니터링하고 조기 경보하는 AI 기반 시스템 개발
+  **[실시간 시스템 운영 중 - 전국 수위 예측 보기](https://sil.manta-pado.store/){:target="_blank"}**
 
 - **Construct-RAG: Contrastive Sentence Training & Retrieval Using Chunk Block-Based Text** (2024)
   *프로젝트 매니저*

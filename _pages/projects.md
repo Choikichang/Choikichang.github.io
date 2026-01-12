@@ -13,8 +13,33 @@ author_profile: true
 
 ## Autonomous Evolutionary AI-Based Smart Sensing Platform for Levee Failures (MANTA)
 
+<div style="padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; margin-bottom: 20px; color: white;">
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+    <span style="background-color: #4ade80; width: 12px; height: 12px; border-radius: 50%; animation: pulse 2s infinite;"></span>
+    <strong style="font-size: 1.1em;">Live System Running</strong>
+  </div>
+  <p style="margin-bottom: 15px;">The MANTA flood prediction system is currently operational, providing <strong>real-time water level predictions nationwide in South Korea</strong> every day.</p>
+  <a href="https://sil.manta-pado.store/" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: white; color: #667eea; text-decoration: none; border-radius: 8px; font-weight: bold;">
+    View Live System
+  </a>
+</div>
+
+<style>
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+</style>
+
 An AI-based system development project for early detection and prediction of levee failures. This project focuses on creating accurate water level forecasting models that can operate effectively even in locations with limited historical data.
 
+### Live System Features
+- **Real-time Monitoring**: Interactive map displaying water level predictions across multiple monitoring stations nationwide
+- **Alert System**: Color-coded warning levels - Safe (< 1m change) and Warning (>= 1m change)
+- **Analytics Dashboard**: Detailed forecasting data and trend analysis for each monitoring point
+- **Daily Predictions**: Continuous 24/7 operation with regular model updates
+
+### Technical Achievements
 - **MANTA Model Development**: Designed and implemented the MANTA (Multivariate Adaptive Network for Temporal Analysis) model for short-term water level forecasting
 - **Heterogeneous Data Handling**: Developed techniques to address non-uniform data distribution across different river monitoring stations
 - **Performance**: Achieved prediction accuracy of less than 5cm error for 1-hour ahead forecasts during rainfall events

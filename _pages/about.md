@@ -38,7 +38,7 @@ I am a Ph.D. student in the Smart Infrastructure Laboratory at Yonsei University
 
 ## Publications
 
-1. **Choi, K**., Jeong, M., Shin, Y., Ma, J., Kim, K., & Kim, H. (2025). "Construct-Rag: Contrastive Sentence Training & Retrieval Using Chunk Block-Based Text for Rag", Available at SSRN 5205959.
+1. **Choi, K**., Jeong, M., Shin, Y., Ma, J., Kim, K., & Kim, H. (2025). "Retrieval Optimization for Construction Documents in Low-Resource Languages Using Contrastive Sentence Generation and Matryoshka Representation Learning", *Automation in Construction*.
 
 2. Idrees, S., Nugraha, J.A., Tahir, S., **Choi, K**., Choi, J., Ryu, D.H., Kim, J.H. (2024). "Automatic concrete slump prediction of concrete batching plant by deep learning", DEVELOPMENTS IN THE BUILT ENVIRONMENT
 
@@ -58,9 +58,10 @@ I am a Ph.D. student in the Smart Infrastructure Laboratory at Yonsei University
 
 ## Projects
 
-- **Autonomous Evolutionary AI-Based Smart Sensing Platform for Early Detection and Proactive Response to Levee Failures** (August 2024 - Present)  
-  *Project Manager*  
+- **Autonomous Evolutionary AI-Based Smart Sensing Platform for Early Detection and Proactive Response to Levee Failures (MANTA)** (August 2024 - Present)
+  *Project Manager*
   Developing AI-driven systems for monitoring and early warning of potential levee failures
+  **[Live System Running - View nationwide real-time water level predictions](https://sil.manta-pado.store/){:target="_blank"}**
 
 - **Construct-Rag: Contrastive Sentence Training & Retrieval Using Chunk Block-Based Text for Rag** (2024)  
   *Project Manager*  

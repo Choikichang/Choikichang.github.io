@@ -8,14 +8,44 @@ lang: ko
 
 {% include base_path %}
 
-<div style="text-align: right; margin-bottom: 1em;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5em; flex-wrap: wrap; gap: 10px;">
+  <nav style="display: flex; gap: 10px;">
+    <a href="/ko/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">소개</a>
+    <a href="/ko/publications/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">논문</a>
+    <a href="/ko/projects/" style="padding: 0.5em 1em; background-color: #007bff; color: white; border-radius: 5px; text-decoration: none;">프로젝트</a>
+  </nav>
   <a href="/projects/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇺🇸 English</a>
 </div>
 
 ## 제방 붕괴 조기 감지를 위한 자율 진화형 AI 기반 스마트 센싱 플랫폼 (MANTA)
 
+<div style="padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; margin-bottom: 20px; color: white;">
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+    <span style="background-color: #4ade80; width: 12px; height: 12px; border-radius: 50%; animation: pulse 2s infinite;"></span>
+    <strong style="font-size: 1.1em;">실시간 시스템 운영 중</strong>
+  </div>
+  <p style="margin-bottom: 15px;">MANTA 홍수 예측 시스템이 현재 운영 중이며, <strong>대한민국 전국의 수위를 매일 실시간으로 예측</strong>하고 있습니다.</p>
+  <a href="https://sil.manta-pado.store/" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: white; color: #667eea; text-decoration: none; border-radius: 8px; font-weight: bold;">
+    실시간 시스템 보기
+  </a>
+</div>
+
+<style>
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+</style>
+
 제방 붕괴를 조기에 감지하고 예측하기 위한 AI 기반 시스템 개발 프로젝트입니다. 과거 데이터가 제한적인 지역에서도 효과적으로 작동할 수 있는 정확한 수위 예측 모델 개발에 집중하고 있습니다.
 
+### 실시간 시스템 기능
+- **실시간 모니터링**: 전국 다수의 관측소에서 수위 예측 정보를 표시하는 인터랙티브 지도
+- **경보 시스템**: 색상으로 구분된 경고 수준 - 안전 (1m 미만 변화) 및 경고 (1m 이상 변화)
+- **분석 대시보드**: 각 관측 지점별 상세 예측 데이터 및 추세 분석
+- **일일 예측**: 정기적인 모델 업데이트와 함께 24시간 연속 운영
+
+### 기술적 성과
 - **MANTA 모델 개발**: 단기 수위 예측을 위한 MANTA(Multivariate Adaptive Network for Temporal Analysis) 모델 설계 및 구현
 - **이질적 데이터 처리**: 서로 다른 하천 관측소 간의 불균등한 데이터 분포 문제를 해결하는 기법 개발
 - **성능**: 강우 이벤트 발생 시 1시간 선행 예측에서 5cm 미만의 오차 달성
