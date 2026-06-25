@@ -14,16 +14,14 @@ export default function Manta({ parts, material, params: p, bounds = 16, paused 
     const g = root.current
     if (!g || paused) return
     const t = state.clock.elapsedTime
-    const dir = bus.surge > 0.01 ? bus.dir : p.dir
-    const speed = p.speed * (1 + bus.surge * 7)
-
-    g.position.x += dir * speed * delta
+    // The school keeps a calm cruise; the *camera* provides the dive motion.
+    g.position.x += p.dir * p.speed * delta
     if (g.position.x > bounds) g.position.x = -bounds
     else if (g.position.x < -bounds) g.position.x = bounds
     g.position.y = p.y0 + Math.sin(t * p.bobSpeed + p.phase) * p.bobAmp
     g.position.z = p.z0 + Math.sin(t * 0.25 + p.phase) * 0.6
 
-    g.rotation.y = (dir >= 0 ? -Math.PI / 2 : Math.PI / 2) + Math.sin(t * 0.3 + p.phase) * 0.12
+    g.rotation.y = (p.dir >= 0 ? -Math.PI / 2 : Math.PI / 2) + Math.sin(t * 0.3 + p.phase) * 0.12
     g.rotation.z = Math.sin(t * 0.5 + p.phase) * 0.09 // gentle bank -> flash of belly
 
     const flap = Math.sin(t * p.flapSpeed + p.phase) * p.flapAmount * (1 + bus.surge * 0.8)

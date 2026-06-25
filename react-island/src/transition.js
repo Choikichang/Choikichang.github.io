@@ -1,11 +1,27 @@
-import { surge } from './bus.js'
+import { bus, surge } from './bus.js'
 
-// "Mantas swoosh across, ocean veil wipes, page swaps." On a multi-page Jekyll
-// site we can't keep one canvas alive across navigations, so we sell the
-// transition with a DOM veil (robust) + a surge of the background school
-// (flair). The veil guarantees a clean cover/reveal even if WebGL is slow.
+// "Dive forward into the deep, then surface on the next page." On a multi-page
+// Jekyll site the canvas can't survive a navigation, so we choreograph it as
+// cover -> reveal: the outgoing page dives the camera forward through the school
+// while an ocean veil closes in; the incoming page starts deep and rises back
+// up out of the veil. The veil guarantees a clean cover even if WebGL stalls.
 
-const FADE_MS = 600
+const DIVE_MS = 700 // outgoing dive
+const RISE_MS = 800 // incoming surface
+
+const easeIn = (p) => p * p * p
+const easeOut = (p) => 1 - Math.pow(1 - p, 3)
+
+function tween(from, to, ms, ease, onUpdate, onDone) {
+  const start = performance.now()
+  const step = (now) => {
+    const p = Math.min(1, (now - start) / ms)
+    onUpdate(from + (to - from) * ease(p))
+    if (p < 1) requestAnimationFrame(step)
+    else if (onDone) onDone()
+  }
+  requestAnimationFrame(step)
+}
 
 function makeVeil() {
   let el = document.getElementById('manta-veil')
@@ -16,7 +32,7 @@ function makeVeil() {
   return el
 }
 
-// Returns the resolved URL string if `a` is a safe in-site navigation, else null.
+// Resolved URL string if `a` is a safe in-site navigation, else null.
 function internalHref(a) {
   if (!a || a.target === '_blank' || a.hasAttribute('download')) return null
   const raw = a.getAttribute('href')
@@ -35,15 +51,19 @@ function internalHref(a) {
 
 export function setupTransitions() {
   const veil = makeVeil()
+  const reduce =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  // Arriving mid-transition: start covered, then wipe the veil away.
+  // Arriving mid-transition: start deep + covered, then rise and clear.
   if (sessionStorage.getItem('mantaReveal') === '1') {
     sessionStorage.removeItem('mantaReveal')
+    bus.dive = reduce ? 0 : 1
     veil.classList.add('show')
     requestAnimationFrame(() =>
       requestAnimationFrame(() => {
         surge(1)
         veil.classList.remove('show')
+        if (!reduce) tween(1, 0, RISE_MS, easeOut, (v) => (bus.dive = v))
       }),
     )
   }
@@ -56,8 +76,7 @@ export function setupTransitions() {
       const href = internalHref(a)
       if (!href) return
       e.preventDefault()
-      surge(1)
-      veil.classList.add('show')
+
       let navigated = false
       const go = () => {
         if (navigated) return
@@ -65,7 +84,11 @@ export function setupTransitions() {
         sessionStorage.setItem('mantaReveal', '1')
         location.href = href
       }
-      setTimeout(go, FADE_MS + 60) // safety: always navigates
+
+      surge(1)
+      veil.classList.add('show')
+      if (!reduce) tween(0, 1, DIVE_MS, easeIn, (v) => (bus.dive = v))
+      setTimeout(go, (reduce ? 260 : DIVE_MS) + 40) // also fires on dive end via safety margin
     },
     true,
   )
