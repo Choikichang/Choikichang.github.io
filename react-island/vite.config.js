@@ -6,6 +6,13 @@ import react from '@vitejs/plugin-react'
 // GitHub Pages (Jekyll-only, no npm) can serve it without a build step.
 export default defineConfig({
   plugins: [react()],
+  // Vite's library mode does NOT auto-replace process.env.NODE_ENV, so React /
+  // r3f leave bare `process.env.NODE_ENV` checks in the IIFE — which throw
+  // "process is not defined" in the browser and kill the whole bundle. Define it
+  // so those references are inlined at build time.
+  define: {
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  },
   build: {
     outDir: '../assets/manta',
     emptyOutDir: true,
