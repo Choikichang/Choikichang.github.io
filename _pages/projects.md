@@ -40,7 +40,7 @@ An AI-based system development project for early detection and prediction of lev
 - **Daily Predictions**: Continuous 24/7 operation with regular model updates
 
 ### Technical Achievements
-- **MANTA Model Development**: Designed and implemented the MANTA (Multivariate Adaptive Network for Temporal Analysis) model for short-term water level forecasting
+- **MANTA Model Development**: Designed and implemented the MANTA (Multivariate Attention Network) model for short-term water level forecasting
 - **Heterogeneous Data Handling**: Developed techniques to address non-uniform data distribution across different river monitoring stations
 - **Performance**: Achieved prediction accuracy of less than 5cm error for 1-hour ahead forecasts during rainfall events
 - **Early Warning System Integration**: Integrated forecasting models with alert systems for proactive flood management

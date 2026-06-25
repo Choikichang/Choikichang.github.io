@@ -41,7 +41,7 @@ lang: ko
 - **일일 예측**: 정기적인 모델 업데이트와 함께 24시간 연속 운영
 
 ### 기술적 성과
-- **MANTA 모델 개발**: 단기 수위 예측을 위한 MANTA(Multivariate Adaptive Network for Temporal Analysis) 모델 설계 및 구현
+- **MANTA 모델 개발**: 단기 수위 예측을 위한 MANTA(Multivariate Attention Network) 모델 설계 및 구현
 - **이질적 데이터 처리**: 서로 다른 하천 관측소 간의 불균등한 데이터 분포 문제를 해결하는 기법 개발
 - **성능**: 강우 이벤트 발생 시 1시간 선행 예측에서 5cm 미만의 오차 달성
 - **조기 경보 시스템 통합**: 예측 모델을 경보 시스템과 연동하여 선제적 홍수 관리 지원

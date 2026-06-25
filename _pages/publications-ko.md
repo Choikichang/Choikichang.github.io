@@ -14,6 +14,25 @@ lang: ko
 
 ## 주요 논문
 
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 10px; border-left: 4px solid #1e7e34;">
+  <div style="flex: 0 0 300px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0b7a6f 0%, #11998e 100%); border-radius: 8px; min-height: 180px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <div style="text-align: center; color: white; padding: 20px; text-shadow: 0 1px 3px rgba(0,0,0,0.45);">
+      <div style="font-size: 2.5em;">📐🤖</div>
+      <div style="font-weight: bold; margin-top: 8px;">Multi-Agent RAG</div>
+      <div style="font-size: 0.85em; opacity: 0.95;">자동 구조 계산</div>
+    </div>
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <span style="display:inline-block; background-color:#1e7e34; color:white; font-size:0.75em; font-weight:bold; padding:3px 10px; border-radius:12px; margin-bottom:10px;">신규 · 2026</span>
+    <h3 style="margin-top: 0; color: #1e7e34;">RAMASC: A Retrieval-Augmented Multi-Agent Framework for Automated Structural Calculation</h3>
+    <p style="color: #666; margin-bottom: 10px;"><strong>Choi, K.</strong>, Jeong, M., Kim, T., Kim, S., Baek, S., &amp; Kim, H. (2026)</p>
+    <p style="color: #1e7e34; font-weight: bold;"><em>Advanced Engineering Informatics</em></p>
+    <p style="margin-top: 15px;">
+      <a href="https://doi.org/10.1016/j.aei.2026.104698" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #1e7e34; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px;">📄 논문 보기</a>
+    </p>
+  </div>
+</div>
+
 <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 10px; border-left: 4px solid #007bff;">
   <div style="flex: 0 0 300px;">
     <img src="/images/Construction_RAGO/Kichang_Title.png" alt="Construct-RAG 프레임워크" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -28,14 +47,34 @@ lang: ko
   </div>
 </div>
 
-<div style="display: flex; gap: 15px; margin-bottom: 30px;">
-  <div style="flex: 1; text-align: center;">
+<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 30px;">
+  <div style="flex: 1; min-width: 300px; text-align: center;">
     <img src="/images/Construction_RAGO/FrameWork_ver2.png" alt="프레임워크 개요" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
     <p style="color: #666; font-size: 0.9em; margin-top: 8px;">프레임워크 개요</p>
   </div>
-  <div style="flex: 1; text-align: center;">
+  <div style="flex: 1; min-width: 300px; text-align: center;">
     <img src="/images/Construction_RAGO/Matryoshka Retrieval.png" alt="Matryoshka 검색" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
     <p style="color: #666; font-size: 0.9em; margin-top: 8px;">Matryoshka 검색</p>
+  </div>
+</div>
+
+---
+
+## 프리프린트 & 진행 중인 연구
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, #2c1a4d 0%, #4a2c7a 100%); border-radius: 10px;">
+  <div style="flex: 0 0 160px; display: flex; align-items: center; justify-content: center;">
+    <img src="/images/manta_down.png" alt="MANTA" style="width: 130px; height: auto;">
+  </div>
+  <div style="flex: 1; min-width: 300px; color: #ffffff;">
+    <span style="display:inline-block; background-color:#facc15; color:#1f2937; font-size:0.75em; font-weight:bold; padding:3px 10px; border-radius:12px; margin-bottom:10px;">SSRN · 심사 중</span>
+    <h3 style="margin-top: 0; color: #ffffff;">MANTA: Multivariate Attention Network for Short-Term Water-Level Forecasting</h3>
+    <p style="color: #e0d7f5; margin-bottom: 10px;"><strong>Choi, K.</strong>, Shin, Y., Kim, Y., Osman, K., &amp; Kim, H. (2026)</p>
+    <p style="color: #c4b5fd; margin-bottom: 12px;">홍수 조기 경보를 위한 실시간·위치 독립적 수위 예측 프레임워크로, 극한 변동 조건의 전국 수위 데이터로 검증되었습니다.</p>
+    <p style="margin-top: 15px;">
+      <a href="https://ssrn.com/abstract=6479487" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #facc15; color: #1f2937; text-decoration: none; border-radius: 5px; margin-right: 10px; font-weight: bold;">📄 SSRN</a>
+      <a href="https://sil.manta-pado.store/" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; border-radius: 5px; border: 1px solid rgba(255,255,255,0.4);">🌊 실시간 시스템</a>
+    </p>
   </div>
 </div>
 

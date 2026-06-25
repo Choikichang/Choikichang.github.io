@@ -36,15 +36,20 @@ lang: ko
 
 ## 논문
 
-1. **Choi, K**., Jeong, M., Shin, Y., Ma, J., Kim, K., & Kim, H. (2025). "Retrieval Optimization for Construction Documents in Low-Resource Languages Using Contrastive Sentence Generation and Matryoshka Representation Learning", *Automation in Construction*.
+1. **Choi, K**., Jeong, M., Kim, T., Kim, S., Baek, S., & Kim, H. (2026). "RAMASC: A Retrieval-Augmented Multi-Agent Framework for Automated Structural Calculation", *Advanced Engineering Informatics*. [[DOI]](https://doi.org/10.1016/j.aei.2026.104698){:target="_blank"}
 
-2. Idrees, S., Nugraha, J.A., Tahir, S., **Choi, K**., Choi, J., Ryu, D.H., Kim, J.H. (2024). "Automatic concrete slump prediction of concrete batching plant by deep learning", DEVELOPMENTS IN THE BUILT ENVIRONMENT
+2. **Choi, K**., Jeong, M., Shin, Y., Ma, J., Kim, K., & Kim, H. (2025). "Retrieval Optimization for Construction Documents in Low-Resource Languages Using Contrastive Sentence Generation and Matryoshka Representation Learning", *Automation in Construction*.
 
-3. Basha, S.I., Nugraha, J.A., Rehman, A.U., **Choi, K**., Park, S., Kim, J.H. (2024). "Structuration and yield strength characterization of hybrid alkali-activated cement composites (HACC) for ultra-rapid 3D construction printing", CONSTRUCTION AND BUILDING MATERIALS
+3. Idrees, S., Nugraha, J.A., Tahir, S., **Choi, K**., Choi, J., Ryu, D.H., Kim, J.H. (2024). "Automatic concrete slump prediction of concrete batching plant by deep learning", DEVELOPMENTS IN THE BUILT ENVIRONMENT
 
-4. Rehman, A.U., Kang, M., Basha, S.I., **Choi, K**., Kim, J.H. (2024). "Knife Cut Test of Concrete: The Introduction of a New Test Method for Measurement of the Structural Build-Up of 3D Concrete Printing Materials", RILEM BOOKSERIES
+4. Basha, S.I., Nugraha, J.A., Rehman, A.U., **Choi, K**., Park, S., Kim, J.H. (2024). "Structuration and yield strength characterization of hybrid alkali-activated cement composites (HACC) for ultra-rapid 3D construction printing", CONSTRUCTION AND BUILDING MATERIALS
 
-5. Rehman, A.U., Basha, S.I., **Choi, K**., Kang, M., Kim, J.H. (2024). "An Analysis of Penetrometer Test Methods for Structural Build-Up in Stiff and Accelerated 3D Concrete Printing Mixtures", SPRINGER
+5. Rehman, A.U., Kang, M., Basha, S.I., **Choi, K**., Kim, J.H. (2024). "Knife Cut Test of Concrete: The Introduction of a New Test Method for Measurement of the Structural Build-Up of 3D Concrete Printing Materials", RILEM BOOKSERIES
+
+6. Rehman, A.U., Basha, S.I., **Choi, K**., Kang, M., Kim, J.H. (2024). "An Analysis of Penetrometer Test Methods for Structural Build-Up in Stiff and Accelerated 3D Concrete Printing Mixtures", SPRINGER
+
+### 프리프린트
+- **심사 중** — **Choi, K**., Shin, Y., Kim, Y., Osman, K., & Kim, H. (2026). "MANTA: Multivariate Attention Network for Short-Term Water-Level Forecasting", *SSRN*. [[SSRN]](https://ssrn.com/abstract=6479487){:target="_blank"} · [[실시간 시스템]](https://sil.manta-pado.store/){:target="_blank"}
 
 ## 학회 발표
 
