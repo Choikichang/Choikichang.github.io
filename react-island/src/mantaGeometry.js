@@ -105,12 +105,18 @@ export function buildManta(vox = 0.2) {
     else center.push(g)
   }
 
+  // eyes: a small white sclera patch with a raised black pupil, on the head
+  const eyeS = vox * 0.95
   for (const sgn of [-1, 1]) {
-    for (let a = 0; a < 2; a++) {
-      for (let b = 0; b < 2; b++) {
-        center.push(voxel(s, sgn * (1.05 + a * vox), 0.16, -(CF - 0.6) + b * vox, EYE)) // eyes
+    const ex = sgn * 1.1
+    const ey = 0.28
+    const ez = -(CF - 0.95)
+    for (let i = -1; i <= 1; i++) {
+      for (let j = -1; j <= 1; j++) {
+        center.push(voxel(eyeS, ex + i * eyeS, ey, ez + j * eyeS, WHITE)) // sclera (whites)
       }
     }
+    center.push(voxel(eyeS, ex, ey + eyeS * 0.8, ez, EYE)) // black pupil, raised on top
   }
 
   return {

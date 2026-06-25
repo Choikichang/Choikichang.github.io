@@ -16,15 +16,32 @@ export default function Manta({ parts, material, params: p, bounds = 16, paused 
     const t = state.clock.elapsedTime
     // The school keeps a calm cruise; the *camera* provides the dive motion.
     g.position.x += p.dir * p.speed * delta
+
+    // startle: flinch + dart away fast from a recent pointer poke (mouse/touch)
+    let startle = 0
+    const sk = bus.startle
+    const age = (performance.now() - sk.t) / 1000
+    if (age >= 0 && age < 1.1) {
+      const dx = g.position.x - sk.x
+      const dz = g.position.z - sk.z
+      const dist = Math.hypot(dx, dz)
+      const R = 7 // reaction radius
+      if (dist < R) {
+        startle = (1 - dist / R) * Math.exp(-age * 2.4) // strong, then fades
+        g.position.x += (dx >= 0 ? 1 : -1) * startle * 16 * delta // dart across
+      }
+    }
+
     if (g.position.x > bounds) g.position.x = -bounds
     else if (g.position.x < -bounds) g.position.x = bounds
     g.position.y = p.y0 + Math.sin(t * p.bobSpeed + p.phase) * p.bobAmp
     g.position.z = p.z0 + Math.sin(t * 0.25 + p.phase) * 0.6
 
     g.rotation.y = (p.dir >= 0 ? -Math.PI / 2 : Math.PI / 2) + Math.sin(t * 0.3 + p.phase) * 0.12
-    g.rotation.z = Math.sin(t * 0.5 + p.phase) * 0.09 // gentle bank -> flash of belly
+    g.rotation.z = Math.sin(t * 0.5 + p.phase) * 0.09 + startle * 0.45 // bank + flinch
 
-    const flap = Math.sin(t * p.flapSpeed + p.phase) * p.flapAmount * (1 + bus.surge * 0.8)
+    const flap =
+      Math.sin(t * p.flapSpeed + p.phase) * p.flapAmount * (1 + bus.surge * 0.8) + startle * 0.8
     if (right.current) right.current.rotation.z = flap
     if (left.current) left.current.rotation.z = -flap
   })

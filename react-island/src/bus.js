@@ -5,6 +5,7 @@ export const bus = {
   surge: 0, // 0..1 — extra wing-flap energy during a transition
   dive: 0, // reserved (camera dive); kept at 0 with the hero-wipe transition
   dir: 1,
+  startle: { x: 0, z: 0, t: -1e9 }, // last pointer poke (world coords) + timestamp
 }
 
 // Briefly energise flapping during a transition (decays in-scene).

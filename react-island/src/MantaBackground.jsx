@@ -1,14 +1,40 @@
-import React, { useMemo } from 'react'
-import { Canvas } from '@react-three/fiber'
+import React, { useMemo, useEffect } from 'react'
+import { Canvas, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { buildManta } from './mantaGeometry.js'
 import MantaSchool from './MantaSchool.jsx'
 import HeroManta from './HeroManta.jsx'
+import { bus } from './bus.js'
 
 const reduceMotion =
   typeof window !== 'undefined' &&
   window.matchMedia &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+// Listens for clicks/taps anywhere (the canvas is pointer-events:none, so the
+// page keeps working) and turns them into a world-space "poke" the school darts
+// away from. Works for mouse and touch via Pointer Events.
+function Pointer() {
+  const camera = useThree((s) => s.camera)
+  useEffect(() => {
+    const ray = new THREE.Raycaster()
+    const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0) // the y = 0 water plane
+    const ndc = new THREE.Vector2()
+    const hit = new THREE.Vector3()
+    const onDown = (e) => {
+      ndc.set((e.clientX / window.innerWidth) * 2 - 1, -(e.clientY / window.innerHeight) * 2 + 1)
+      ray.setFromCamera(ndc, camera)
+      if (ray.ray.intersectPlane(plane, hit)) {
+        bus.startle.x = hit.x
+        bus.startle.z = hit.z
+        bus.startle.t = performance.now()
+      }
+    }
+    window.addEventListener('pointerdown', onDown)
+    return () => window.removeEventListener('pointerdown', onDown)
+  }, [camera])
+  return null
+}
 
 export default function MantaBackground({ transparent = false }) {
   const w = typeof window !== 'undefined' ? window.innerWidth : 1280
@@ -45,6 +71,7 @@ export default function MantaBackground({ transparent = false }) {
       <directionalLight position={[8, 14, 6]} intensity={1.2} />
       <directionalLight position={[-8, 6, -6]} intensity={0.4} color="#5b7cff" />
 
+      <Pointer />
       <MantaSchool parts={parts} material={material} count={count} paused={reduceMotion} />
       <HeroManta parts={parts} material={material} />
     </Canvas>
