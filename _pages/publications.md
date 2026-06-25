@@ -14,12 +14,8 @@ author_profile: true
 ## Featured Publications
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 10px; border-left: 4px solid #1e7e34;">
-  <div style="flex: 0 0 300px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0b7a6f 0%, #11998e 100%); border-radius: 8px; min-height: 180px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    <div style="text-align: center; color: white; padding: 20px; text-shadow: 0 1px 3px rgba(0,0,0,0.45);">
-      <div style="font-size: 2.5em;">📐🤖</div>
-      <div style="font-weight: bold; margin-top: 8px;">Multi-Agent RAG</div>
-      <div style="font-size: 0.85em; opacity: 0.95;">Automated Structural Calculation</div>
-    </div>
+  <div style="flex: 0 0 300px;">
+    <img src="/images/RAMASC.png" alt="RAMASC: A retrieval-augmented multi-agent framework for automated structural calculation" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <span style="display:inline-block; background-color:#1e7e34; color:white; font-size:0.75em; font-weight:bold; padding:3px 10px; border-radius:12px; margin-bottom:10px;">NEW · 2026</span>
