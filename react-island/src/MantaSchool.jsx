@@ -1,24 +1,9 @@
 import React, { useMemo } from 'react'
-import * as THREE from 'three'
-import { buildManta } from './mantaGeometry.js'
 import Manta from './Manta.jsx'
 
 // A loose school of mantas migrating across the view. Geometry + material are
-// built once and shared by every fish (cheap: ~3 meshes per manta, no per-fish
-// geometry).
-export default function MantaSchool({ count = 8, detail = 0.2, bounds = 16, paused = false }) {
-  const parts = useMemo(() => buildManta(detail), [detail])
-  const material = useMemo(
-    () =>
-      new THREE.MeshStandardMaterial({
-        vertexColors: true,
-        flatShading: true,
-        roughness: 0.78,
-        metalness: 0.04,
-      }),
-    [],
-  )
-
+// built once (in MantaBackground) and shared by every fish — cheap.
+export default function MantaSchool({ parts, material, count = 8, bounds = 16, paused = false }) {
   const fleet = useMemo(() => {
     const r = (a, b) => a + Math.random() * (b - a)
     return Array.from({ length: count }, () => ({

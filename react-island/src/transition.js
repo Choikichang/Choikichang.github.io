@@ -1,16 +1,17 @@
 import { bus, surge } from './bus.js'
 
-// "Dive forward into the deep, then surface on the next page." On a multi-page
-// Jekyll site the canvas can't survive a navigation, so we choreograph it as
-// cover -> reveal: the outgoing page dives the camera forward through the school
-// while an ocean veil closes in; the incoming page starts deep and rises back
-// up out of the veil. The veil guarantees a clean cover even if WebGL stalls.
+// "A giant manta wipes across the screen." Outgoing: the hero manta sweeps from
+// the edge to centre while the ocean veil fades the page out; at the covered
+// midpoint we navigate (the reload is hidden). Incoming: the hero starts centred
+// and sweeps off the far edge while the veil clears, revealing the new page. The
+// background school keeps drifting throughout. On an MPA the veil guarantees a
+// clean cover even if WebGL stalls.
 
-const DIVE_MS = 700 // outgoing dive
-const RISE_MS = 800 // incoming surface
+const SWEEP_OUT = 620 // edge -> centre (cover)
+const SWEEP_IN = 780 // centre -> edge (reveal)
 
-const easeIn = (p) => p * p * p
-const easeOut = (p) => 1 - Math.pow(1 - p, 3)
+const easeIn = (p) => p * p
+const easeOut = (p) => 1 - (1 - p) * (1 - p)
 
 function tween(from, to, ms, ease, onUpdate, onDone) {
   const start = performance.now()
@@ -32,7 +33,11 @@ function makeVeil() {
   return el
 }
 
-// Resolved URL string if `a` is a safe in-site navigation, else null.
+function setVeil(el, o) {
+  el.style.transition = 'none'
+  el.style.opacity = String(o)
+}
+
 function internalHref(a) {
   if (!a || a.target === '_blank' || a.hasAttribute('download')) return null
   const raw = a.getAttribute('href')
@@ -51,21 +56,36 @@ function internalHref(a) {
 
 export function setupTransitions() {
   const veil = makeVeil()
+  const root = document.documentElement
   const reduce =
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  // Arriving mid-transition: start deep + covered, then rise and clear.
+  // Arriving mid-transition: hero centred + covered -> sweep off + reveal.
   if (sessionStorage.getItem('mantaReveal') === '1') {
     sessionStorage.removeItem('mantaReveal')
-    bus.dive = reduce ? 0 : 1
-    veil.classList.add('show')
-    requestAnimationFrame(() =>
+    root.classList.add('manta-crossing')
+    setVeil(veil, 1)
+    if (reduce) {
+      bus.cross = -1
       requestAnimationFrame(() => {
-        surge(1)
-        veil.classList.remove('show')
-        if (!reduce) tween(1, 0, RISE_MS, easeOut, (v) => (bus.dive = v))
-      }),
-    )
+        tween(1, 0, 400, easeOut, (o) => setVeil(veil, o), () => root.classList.remove('manta-crossing'))
+      })
+    } else {
+      bus.cross = 0.5
+      surge(1)
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() =>
+          tween(0.5, 1, SWEEP_IN, easeOut, (c) => {
+            bus.cross = c
+            setVeil(veil, Math.max(0, 1 - (c - 0.5) / 0.5))
+          }, () => {
+            bus.cross = -1
+            root.classList.remove('manta-crossing')
+          }),
+        ),
+      )
+    }
+    setTimeout(() => root.classList.remove('manta-crossing'), SWEEP_IN + 600) // safety
   }
 
   document.addEventListener(
@@ -85,10 +105,20 @@ export function setupTransitions() {
         location.href = href
       }
 
+      root.classList.add('manta-crossing')
       surge(1)
-      veil.classList.add('show')
-      if (!reduce) tween(0, 1, DIVE_MS, easeIn, (v) => (bus.dive = v))
-      setTimeout(go, (reduce ? 260 : DIVE_MS) + 40) // also fires on dive end via safety margin
+      if (reduce) {
+        bus.cross = -1
+        setVeil(veil, 0)
+        tween(0, 1, 320, easeIn, (o) => setVeil(veil, o), go)
+      } else {
+        bus.cross = 0
+        tween(0, 0.5, SWEEP_OUT, easeIn, (c) => {
+          bus.cross = c
+          setVeil(veil, Math.min(1, c / 0.45))
+        }, go)
+      }
+      setTimeout(go, (reduce ? 320 : SWEEP_OUT) + 80) // safety: always navigates
     },
     true,
   )

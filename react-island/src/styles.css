@@ -32,6 +32,12 @@
   opacity: 1;
 }
 
+/* During a page transition, lift the WebGL canvas above the page content so the
+   giant hero manta can wipe across the screen (the veil sits just under it). */
+html.manta-crossing #manta-root {
+  z-index: 70 !important;
+}
+
 /* ---------- integration into the live Jekyll site (html.manta-on) ----------
    Layering, back -> front:
      html background (deep ocean)
