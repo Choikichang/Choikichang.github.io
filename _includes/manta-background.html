@@ -1,0 +1,12 @@
+{% comment %}
+  Voxel-manta WebGL background island (React + react-three-fiber).
+  Source lives in /react-island; the built bundle is committed to /assets/manta.
+  Disabled unless `manta_background: true` in _config.yml so the live site is
+  unaffected while the effect is still being developed on a feature branch.
+{% endcomment %}
+{% if site.manta_background %}
+{% include base_path %}
+<div id="manta-root" data-transparent="true" aria-hidden="true"></div>
+<link rel="stylesheet" href="{{ base_path }}/assets/manta/manta.css" />
+<script defer src="{{ base_path }}/assets/manta/manta.js"></script>
+{% endif %}

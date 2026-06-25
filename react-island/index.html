@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voxel Manta — dev preview</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #0b1f3a; overflow: hidden; }
+      /* Fake page content to preview the manta layer sitting BEHIND text */
+      .demo-content {
+        position: fixed; inset: 0; display: flex; align-items: center;
+        justify-content: center; pointer-events: none; z-index: 2;
+      }
+      .demo-card {
+        background: rgba(255,255,255,0.86); color: #1f2937; padding: 28px 36px;
+        border-radius: 14px; font-family: system-ui, sans-serif; max-width: 460px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="manta-root"></div>
+    <div class="demo-content">
+      <div class="demo-card">
+        <h2 style="margin-top:0">Phase 1 · Voxel Manta</h2>
+        <p>This card simulates page content sitting in front of the manta
+        background layer. Resize the window and watch the manta swim/flap.</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

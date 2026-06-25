@@ -1,0 +1,15 @@
+/* Fixed full-viewport layer that lives BEHIND the page content. */
+#manta-root {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* never block clicks/scroll on the real page */
+  z-index: 0;
+}
+
+#manta-root canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
