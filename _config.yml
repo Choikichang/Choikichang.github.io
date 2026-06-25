@@ -85,7 +85,7 @@ publication_category:
     title: 'Conference Papers'
 
 # Site Settings
-manta_background         : false # set true to enable the voxel-manta WebGL background (bundle built from /react-island)
+manta_background         : true # set true to enable the voxel-manta WebGL background (bundle built from /react-island)
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160

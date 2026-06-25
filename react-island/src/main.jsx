@@ -1,6 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import MantaBackground from './MantaBackground.jsx'
+import { setupTransitions } from './transition.js'
 import './styles.css'
 
 // Self-mounting entry: render the manta background into #manta-root wherever
@@ -17,6 +18,7 @@ function mount() {
       <MantaBackground transparent={transparent} />
     </React.StrictMode>,
   )
+  setupTransitions()
 }
 
 if (document.readyState === 'loading') {

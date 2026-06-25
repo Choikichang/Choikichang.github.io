@@ -1,12 +1,17 @@
 {% comment %}
   Voxel-manta WebGL background island (React + react-three-fiber).
   Source lives in /react-island; the built bundle is committed to /assets/manta.
-  Disabled unless `manta_background: true` in _config.yml so the live site is
-  unaffected while the effect is still being developed on a feature branch.
+  Gated by `manta_background` in _config.yml. The <html> element also gets the
+  `manta-on` class (see _layouts/default.html) which switches on the integration
+  styling in manta.css (ocean backdrop + frosted readability scrim).
+
+  Order matters: #manta-root (canvas) before #manta-scrim so the frosted scrim
+  paints on top of the fish but still behind the page text.
 {% endcomment %}
 {% if site.manta_background %}
 {% include base_path %}
 <div id="manta-root" data-transparent="true" aria-hidden="true"></div>
+<div id="manta-scrim" aria-hidden="true"></div>
 <link rel="stylesheet" href="{{ base_path }}/assets/manta/manta.css" />
 <script defer src="{{ base_path }}/assets/manta/manta.js"></script>
 {% endif %}

@@ -1,15 +1,75 @@
-/* Fixed full-viewport layer that lives BEHIND the page content. */
+/* =========================================================================
+   Manta island styles. Loaded only when the background is enabled (the Jekyll
+   include pulls in the compiled manta.css), plus used by the dev preview.
+   ========================================================================= */
+
+/* ---------- mount layer (dev preview = full-screen background) ---------- */
 #manta-root {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* never block clicks/scroll on the real page */
+  pointer-events: none; /* never intercept clicks/scroll */
   z-index: 0;
 }
-
 #manta-root canvas {
   display: block;
   width: 100% !important;
   height: 100% !important;
+}
+
+/* ---------- page-transition veil (ocean wipe) ---------- */
+#manta-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  background: radial-gradient(140% 120% at 50% 35%, rgba(28, 55, 110, 0.65), rgba(5, 14, 32, 0.97));
+}
+#manta-veil.show {
+  opacity: 1;
+}
+
+/* ---------- integration into the live Jekyll site (html.manta-on) ----------
+   Layering, back -> front:
+     html background (deep ocean)
+       -> #manta-root  (WebGL school, z-index -1)
+         -> #manta-scrim (frosted glass — guarantees text stays readable)
+           -> normal page content (masthead/sidebar/footer keep their own bg)
+   Readability never depends on where a manta happens to be: the scrim always
+   sits between the fish and the text. Tune `--manta-scrim` for more/less fish.
+   ------------------------------------------------------------------------- */
+html.manta-on {
+  --manta-scrim: 0.7; /* 0 = vivid fish, 1 = fully frosted/white */
+  background: linear-gradient(180deg, #0b2042 0%, #06132b 65%, #040d1f 100%) fixed;
+}
+html.manta-on body {
+  background: transparent;
+}
+html.manta-on #manta-root {
+  z-index: -1; /* drop the school behind the page content */
+}
+#manta-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* same level as the canvas; painted after it -> sits on top */
+  pointer-events: none;
+  background: rgba(245, 248, 255, var(--manta-scrim, 0.7));
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Give the top nav a faint frosted look so a little ocean peeks through it. */
+html.manta-on .masthead {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #manta-veil {
+    transition: none;
+  }
 }

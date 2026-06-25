@@ -1,31 +1,36 @@
 import React from 'react'
 import { Canvas } from '@react-three/fiber'
-import VoxelManta from './VoxelManta.jsx'
+import MantaSchool from './MantaSchool.jsx'
 
 const reduceMotion =
   typeof window !== 'undefined' &&
   window.matchMedia &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-// The underwater scene. `transparent` lets the same scene sit over the real
-// Jekyll page (alpha canvas) instead of painting its own ocean (dev preview).
 export default function MantaBackground({ transparent = false }) {
+  const w = typeof window !== 'undefined' ? window.innerWidth : 1280
+  const small = w < 760
+  // fewer fish + lighter render on small / low-power devices
+  const count = small ? 5 : 8
+  const dpr = small ? 1 : [1, 1.6]
+
   return (
     <Canvas
-      camera={{ position: [0, 1.5, 16], fov: 50 }}
-      dpr={[1, 1.75]}
-      gl={{ antialias: true, alpha: transparent, powerPreference: 'high-performance' }}
+      camera={{ position: [0, 12, 11], fov: 50 }}
+      dpr={dpr}
+      gl={{ antialias: !small, alpha: transparent, powerPreference: 'high-performance' }}
       frameloop={reduceMotion ? 'demand' : 'always'}
+      onCreated={({ camera }) => camera.lookAt(0, 0, 0)}
     >
-      {!transparent && <color attach="background" args={['#0b1f3a']} />}
-      <fog attach="fog" args={['#0b1f3a', 14, 34]} />
+      {!transparent && <color attach="background" args={['#08182f']} />}
+      <fog attach="fog" args={['#08182f', 16, 44]} />
 
-      <ambientLight intensity={0.55} />
-      <hemisphereLight args={['#bcd4ff', '#0a1830', 0.6]} />
-      <directionalLight position={[6, 10, 8]} intensity={1.15} />
-      <directionalLight position={[-8, -3, -6]} intensity={0.35} color="#5b7cff" />
+      <ambientLight intensity={0.6} />
+      <hemisphereLight args={['#bcd4ff', '#08152b', 0.6]} />
+      <directionalLight position={[8, 14, 6]} intensity={1.2} />
+      <directionalLight position={[-8, 6, -6]} intensity={0.4} color="#5b7cff" />
 
-      <VoxelManta paused={reduceMotion} />
+      <MantaSchool count={count} paused={reduceMotion} />
     </Canvas>
   )
 }
