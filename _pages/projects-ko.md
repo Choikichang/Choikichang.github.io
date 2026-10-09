@@ -12,6 +12,13 @@ lang: ko
   <a href="/projects/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇺🇸 English</a>
 </div>
 
+## MANTA Robotics · 건설 로봇 창업
+
+<div style="padding: 18px 20px; border: 1px solid #c6c8c2; border-left: 4px solid #2457c9; background: #ecece8; margin-bottom: 20px; color: #1c2a3a;">
+  <p style="margin: 0 0 12px;">아파트 실내 조적을 무인화하는 이동형 로봇을 만드는 연세대학교 실험실 창업팀입니다. 바닥의 먹선을 읽어 2mm 안에 블록을 놓고, 사람의 시연으로 배운 정책으로 움직입니다.</p>
+  <a href="/robotics/" style="display: inline-block; padding: 9px 18px; background: #1c2a3a; color: #dcddd8; text-decoration: none; border-radius: 2px;">MANTA Robotics 홈페이지</a>
+</div>
+
 ## 제방 붕괴 조기 감지를 위한 자율 진화형 AI 기반 스마트 센싱 플랫폼 (MANTA)
 
 <div style="padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; margin-bottom: 20px; color: white;">

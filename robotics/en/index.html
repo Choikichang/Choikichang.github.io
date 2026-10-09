@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MANTA Robotics</title>
+<meta name="description" content="MANTA Robotics builds a mobile robot that automates interior masonry in apartment construction. It reads chalk lines on the slab to place blocks within 2 mm, using policies learned from human demonstration.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MANTA Robotics">
+<meta property="og:description" content="Construction robots that start with masonry and grow to build the whole site. A Yonsei University lab startup.">
+<meta property="og:image" content="https://choikichang.github.io/robotics/assets/og.png">
+<link rel="preload" as="image" href="../assets/hero-photo.jpg">
+<meta property="og:url" content="https://choikichang.github.io/robotics/en/">
+<link rel="alternate" hreflang="ko" href="https://choikichang.github.io/robotics/">
+<link rel="alternate" hreflang="en" href="https://choikichang.github.io/robotics/en/">
+<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#top" aria-label="MANTA Robotics home">
+      <svg class="brand__mark" viewBox="0 0 40 24" aria-hidden="true"><path d="M20 3c-3 0-5 2-7 4C10 9 5 10 1 9c3 3 7 5 11 5 1 0 2 1 3 2l5 6 5-6c1-1 2-2 3-2 4 0 8-2 11-5-4 1-9 0-12-2-2-2-4-4-7-4z" fill="currentColor"/></svg>
+      <span>MANTA Robotics</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#localize">Localization</a>
+      <a href="#learning">Learning</a>
+      <a href="#robot">Robot</a>
+      <a href="#progress">Progress</a>
+      <a href="#vision">Vision</a>
+      <a href="#team">Team</a>
+    </nav>
+    <a class="lang" href="../" hreflang="ko" lang="ko">한국어</a>
+    <a class="btn btn--small" href="mailto:amki1027@yonsei.ac.kr?subject=MANTA%20Robotics%20investor%20materials">Request investor deck</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap hero__text">
+    <h1>We start with masonry.<br>We will build the whole site.</h1>
+    <p class="lede">MANTA Robotics builds a mobile robot that lays interior masonry walls in apartment construction. It reads the chalk lines on the slab to place each block within 2 mm, and it moves with policies learned from skilled workers.</p>
+    <p class="hero__actions">
+      <a class="btn" href="mailto:amki1027@yonsei.ac.kr?subject=MANTA%20Robotics%20investor%20materials">Request investor deck</a>
+      <a class="link" href="#localize">See the technology</a>
+    </p>
+  </div>
+
+  <figure class="elevation">
+    <div class="elevation__band">
+    <div class="elevation__stage">
+      <img src="../assets/hero-photo.jpg" width="1619" height="994" alt="The MANTA robot arm. Two aluminum truss links extend horizontally from a vertical Z-axis rail, ending in a wrist servo, a gripper and a wrist camera.">
+      <svg class="dims" viewBox="0 -90 1619 994" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <!-- Z rail height -->
+        <g class="dim">
+          <line x1="285" y1="22" x2="285" y2="900"/>
+          <line x1="265" y1="22" x2="305" y2="22" class="tick"/>
+          <line x1="265" y1="900" x2="305" y2="900" class="tick"/>
+          <text x="267" y="461" transform="rotate(-90 267 461)" text-anchor="middle">Z rail 444</text>
+        </g>
+        <!-- horizontal reach -->
+        <g class="dim">
+          <line x1="497" y1="370" x2="1322" y2="370"/>
+          <line x1="497" y1="350" x2="497" y2="455" class="ext"/>
+          <line x1="1322" y1="350" x2="1322" y2="465" class="ext"/>
+          <text x="910" y="352" text-anchor="middle">Reach approx. 430</text>
+        </g>
+        <!-- callouts -->
+        <g class="call">
+          <circle cx="497" cy="488" r="7"/>
+          <line x1="497" y1="488" x2="570" y2="635"/>
+          <text x="578" y="660">J1 DM4310</text>
+        </g>
+        <g class="call">
+          <circle cx="962" cy="488" r="7"/>
+          <line x1="962" y1="488" x2="1020" y2="635"/>
+          <text x="1028" y="660">J2 DM4310</text>
+        </g>
+        <g class="call">
+          <circle cx="1300" cy="495" r="7"/>
+          <line x1="1300" y1="495" x2="1385" y2="420"/>
+          <text x="1393" y="416">Wrist STS3215</text>
+        </g>
+        <g class="call">
+          <circle cx="1320" cy="800" r="7"/>
+          <line x1="1320" y1="800" x2="1190" y2="840"/>
+          <text x="1182" y="852" text-anchor="end">Gripper SE90</text>
+        </g>
+      </svg>
+    </div>
+    </div>
+    <!-- chalk line: snapped once on load -->
+    <div class="chalk" aria-hidden="true"><span class="chalk__line"></span></div>
+    <figcaption class="wrap elevation__cap">
+      <span>Photorealistic rendering of the current L1 v3 design. The aluminum prototype is being built. Dimensions in mm.</span>
+      <span class="elevation__tol">Target placement error against the chalk line: within 2 mm</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Why masonry -->
+<section class="sec" id="why" aria-labelledby="why-h">
+  <div class="wrap grid">
+    <h2 id="why-h" class="sec__h">The trade that stops when nobody shows up</h2>
+    <div class="sec__body">
+      <p>Masonry is among the fastest-aging and fastest-rising-wage trades in Korean construction. Bricklaying robots exist, but most are truck-mounted machines for exterior walls. No robot yet passes through an apartment door to build bathroom and balcony walls. That gap is where we start.</p>
+      <dl class="facts">
+        <div><dt>29.4%</dt><dd>of skilled construction workers are 60 or older<small>Construction Workers Mutual Aid Association, May 2026</small></dd></div>
+        <div><dt>KRW 270k</dt><dd>daily wage of a mason<small>Construction wage survey, H1 2026</small></dd></div>
+        <div><dt>KRW 600B</dt><dd>annual in-unit masonry spend in new apartments<small>240k to 270k units started per year × KRW 2.3M per unit. Our estimate.</small></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Chalk-line localization -->
+<section class="sec sec--feature" id="localize" aria-labelledby="loc-h">
+  <div class="wrap grid">
+    <h2 id="loc-h" class="sec__h">The chalk line is our map</h2>
+    <div class="sec__body">
+      <p>Every site already has coordinates drawn on it. They are the chalk lines snapped on floors and walls during layout. Inside a bare concrete unit, general-purpose SLAM finds few features to hold on to, so position error builds up.</p>
+      <p>MANTA detects chalk lines with its cameras and solves its position and heading directly against the construction reference lines. Drift is reset every time the robot sees a line again. Right before placing a block, it corrects once more against the line.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="plan">
+      <svg viewBox="0 0 960 360" role="img" aria-labelledby="plan-t plan-d">
+        <title id="plan-t">Chalk-line localization concept</title>
+        <desc id="plan-d">Two chalk lines cross a unit floor plan. The robot's estimated path drifts as it travels along line X1, snaps back when it crosses line Y3, and is corrected once more just before placing a block.</desc>
+        <rect x="20" y="20" width="920" height="320" class="plan__room"/>
+        <line x1="20" y1="250" x2="940" y2="250" class="plan__chalk"/>
+        <line x1="640" y1="20" x2="640" y2="340" class="plan__chalk"/>
+        <text x="30" y="242" class="plan__label">Line X1</text>
+        <text x="648" y="40" class="plan__label">Line Y3</text>
+        <path d="M80 214 C 260 212, 470 198, 640 176" class="plan__drift"/>
+        <path d="M640 176 L 640 214" class="plan__drift"/>
+        <path d="M80 214 L 760 214" class="plan__true"/>
+        <g class="plan__fix"><circle cx="640" cy="214" r="9"/><circle cx="752" cy="214" r="9"/></g>
+        <text x="628" y="160" text-anchor="end" class="plan__note">Crossing Y3 resets position</text>
+        <text x="800" y="185" text-anchor="middle" class="plan__note">Final correction</text>
+        <rect x="770" y="196" width="60" height="36" class="plan__block"/>
+        <text x="800" y="275" text-anchor="middle" class="plan__note">Block</text>
+      </svg>
+      <figcaption>
+        <span class="key key--drift">Estimated path without correction</span>
+        <span class="key key--true">Path referenced to chalk lines</span>
+      </figcaption>
+    </figure>
+
+    <div class="pair">
+      <figure>
+        <img src="../assets/vision-detect.jpg" width="1200" height="500" loading="lazy" alt="Two camera views, wrist and fixed, with placement targets detected as green and blue masks">
+        <figcaption>Lab test detecting placement targets from the wrist and fixed cameras. About 28 FPS.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/sim-newton.jpg" width="1800" height="990" loading="lazy" alt="A mobile robot following a floor line between blocks in a physics simulator, with many environments running at once">
+        <figcaption>Learning line-following motion with 16 parallel environments in the Newton physics engine.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Learning pipeline -->
+<section class="sec" id="learning" aria-labelledby="learn-h">
+  <div class="wrap grid">
+    <div class="sec__side">
+      <h2 id="learn-h" class="sec__h">Learn from people, scale in simulation, correct on site</h2>
+      <figure class="side-fig">
+        <img src="../assets/proto-teleop.jpg" width="1140" height="720" loading="lazy" alt="A researcher teleoperating the 3D-printed robot arm to collect demonstration data">
+        <figcaption>Collecting teleoperation demonstrations on the 3D-printed prototype. September 2026.</figcaption>
+      </figure>
+    </div>
+    <div class="sec__body">
+      <p>Conventional industrial robots are programmed point by point and must be retaught whenever the task changes. Our robot learns by watching skilled workers. A new task needs 50 to 100 demonstrations for an initial policy, and the same robot takes on another process by changing its tool.</p>
+      <ol class="steps">
+        <li><h3>First-person demonstrations</h3><p>Skilled workers record their hands, gaze and work with a head-mounted camera.</p></li>
+        <li><h3>Teleoperation</h3><p>Operators drive the robot with a leader arm to collect demonstrations from the robot's point of view.</p></li>
+        <li><h3>Reinforcement learning in simulation</h3><p>Policies trained at scale in a digital twin are transferred to the real robot.</p></li>
+        <li><h3>Chalk-line correction</h3><p>Just before placement, the robot re-aligns to the chalk line to land within 2 mm.</p></li>
+        <li><h3>Coordinated mortar work</h3><p>A dispensing arm applies mortar and a placing arm sets the block, in one cycle.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Robot -->
+<section class="sec" id="robot" aria-labelledby="robot-h">
+  <div class="wrap grid">
+    <h2 id="robot-h" class="sec__h">We design and build our own arm</h2>
+    <div class="sec__body">
+      <p>Commercial cobots have closed controllers that make learned policies hard to deploy, and the arm alone costs over KRW 40M. So we designed our own. A 3D-printed version validated actuation and imitation learning, and we are now moving to an aluminum structure. One arm costs about KRW 3M to build.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="viewer">
+      <div class="viewer__tabs" role="tablist" aria-label="Drawing view">
+        <button role="tab" aria-selected="true" aria-controls="view" data-src="../assets/cad-iso_tr.png" data-alt="Robot arm, isometric view">Isometric</button>
+        <button role="tab" aria-selected="false" aria-controls="view" data-src="../assets/cad-front.png" data-alt="Robot arm, front view">Front</button>
+        <button role="tab" aria-selected="false" aria-controls="view" data-src="../assets/cad-top.png" data-alt="Robot arm, top view">Top</button>
+        <button role="tab" aria-selected="false" aria-controls="view" data-src="../assets/cad-right.png" data-alt="Robot arm, side view">Side</button>
+      </div>
+      <div class="viewer__img" id="view" role="tabpanel">
+        <img src="../assets/cad-iso_tr.png" alt="Robot arm, isometric view" loading="lazy">
+      </div>
+      <table class="spec">
+        <caption>Current design</caption>
+        <tbody>
+          <tr><th scope="row">Layout</th><td>Vertical Z axis, two horizontal joints, wrist rotation</td></tr>
+          <tr><th scope="row">Z axis</th><td>Linear rail, 444 mm</td></tr>
+          <tr><th scope="row">J1, J2</th><td>DM4310 joint modules</td></tr>
+          <tr><th scope="row">Wrist</th><td>STS3215 servo</td></tr>
+          <tr><th scope="row">Gripper</th><td>SE90 self-locking, 90 mm</td></tr>
+          <tr><th scope="row">Wrist camera</th><td>GoPro HERO11</td></tr>
+          <tr><th scope="row">Links</th><td>Aluminum plate truss</td></tr>
+          <tr><th scope="row">Reach</th><td>Approx. 430 mm</td></tr>
+          <tr><th scope="row">Build cost</th><td>Approx. KRW 3M per arm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pair pair--uneven">
+      <figure>
+        <img src="../assets/proto-arm.jpg" width="1800" height="990" loading="lazy" alt="The white 3D-printed robot arm on a lab bench, with two truss links and a gripper on a vertical ball-screw rail">
+        <figcaption>3D-printed prototype used to validate actuation and imitation learning in the lab.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/concept-mobile.jpg" width="1672" height="941" loading="lazy" alt="Concept image of a mobile masonry robot next to a block wall in a concrete interior">
+        <figcaption>Concept of the mobile masonry robot. This is an AI-generated image, not a photo. A placing arm and a mortar arm ride on a wheeled base designed to pass through a 0.9 m unit door.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Progress -->
+<section class="sec" id="progress" aria-labelledby="prog-h">
+  <div class="wrap grid">
+    <h2 id="prog-h" class="sec__h">Where we are</h2>
+    <div class="sec__body">
+      <p>Core technologies are validated in the lab, at TRL 3. Next we aim to reach TRL 6 through an on-site proof of concept.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stages">
+      <section class="stage stage--done" aria-labelledby="st1">
+        <h3 id="st1">Done</h3>
+        <ul>
+          <li>Teleoperation demonstration data collected</li>
+          <li>Imitation-learning policy trained and run on hardware</li>
+          <li>Robot arm designed and 3D-printed prototype built</li>
+          <li>15 kg member placed in about 1 minute in simulation, 1.5 to 2 times human speed</li>
+          <li>One patent granted, one pending, international journal papers</li>
+        </ul>
+      </section>
+      <section class="stage stage--now" aria-labelledby="st2">
+        <h3 id="st2">In progress</h3>
+        <ul>
+          <li>Moving to an aluminum structure</li>
+          <li>Mortar pump and dispensing arm</li>
+          <li>Digital twin</li>
+          <li>Measuring masonry cycle time and accuracy</li>
+        </ul>
+      </section>
+      <section class="stage stage--next" aria-labelledby="st3">
+        <h3 id="st3">Next</h3>
+        <ul>
+          <li>Site-ready prototype robot</li>
+          <li>12-month PoC on an apartment site</li>
+        </ul>
+        <table class="kpi">
+          <caption>PoC targets</caption>
+          <tbody>
+            <tr><th scope="row">Block position error</th><td>Within 2 mm</td></tr>
+            <tr><th scope="row">Mortar volume</th><td>±5%</td></tr>
+            <tr><th scope="row">First-try placement</th><td>90% or more</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- Vision -->
+<section class="sec" id="vision" aria-labelledby="vis-h">
+  <div class="wrap grid">
+    <h2 id="vis-h" class="sec__h">Same pipeline, new tools</h2>
+    <div class="sec__body">
+      <p>Chalk-line and wall perception, learning from demonstration and learning in simulation carry over from trade to trade. What changes is the tool at the end of the arm and the training data. We take what we prove in masonry to interior finishing, then to module factories and the whole site.</p>
+    </div>
+  </div>
+  <div class="wrap scrolly" data-step="1">
+    <div class="scrolly__chart">
+      <div class="stack" aria-hidden="true">
+        <div class="blk" data-g="4" style="--h:5.4"><span class="blk__l">Foundation, earthwork 5.4%</span></div>
+        <div class="blk" data-g="4" style="--h:36"><span class="blk__l">Reinforced concrete 36%</span></div>
+        <div class="blk" data-g="1" style="--h:6.6"><span class="blk__l">Masonry 6.6%</span></div>
+        <div class="blk" data-g="2" style="--h:4.6"><span class="blk__l">Waterproofing 4.6%</span></div>
+        <div class="blk" data-g="2" style="--h:2.5"><span class="blk__l">Plastering 2.5%</span></div>
+        <div class="blk" data-g="3" style="--h:4.4"><span class="blk__l">Metal work 4.4%</span></div>
+        <div class="blk" data-g="3" style="--h:7"><span class="blk__l">Windows, doors 7%</span></div>
+        <div class="blk" data-g="2" style="--h:1.7"><span class="blk__l">Tiling 1.7%</span></div>
+        <div class="blk" data-g="2" style="--h:9.4"><span class="blk__l">Interior fit-out 9.4%</span></div>
+        <div class="blk" data-g="2" style="--h:3.3"><span class="blk__l">Painting 3.3%</span></div>
+        <div class="blk" data-g="4" style="--h:19.1"><span class="blk__l">Other 9 trades 19.1%</span></div>
+      </div>
+      <p class="tally" aria-live="polite">
+        <span class="tally__label">Construction spend our robots address</span>
+        <strong class="tally__num">KRW <span data-tally>1.0</span>T</strong>
+        <span class="tally__share">per year, <span data-share>6.6</span>% of building cost</span>
+      </p>
+    </div>
+
+    <ol class="steps-v">
+      <li class="step" data-step="1" data-tally="1.0" data-share="6.6">
+        <h3>Masonry</h3>
+        <p class="step__fig">6.6% of building cost, about KRW 1.0T a year</p>
+        <p>We start with non-load-bearing walls inside apartment units: bathrooms, balconies, shafts and partitions. It is the hardest trade to staff and the one with the clearest chalk-line reference.</p>
+      </li>
+      <li class="step" data-step="2" data-tally="4.3" data-share="28.1">
+        <h3>Interior finishing</h3>
+        <p class="step__fig">28.1% cumulative, about KRW 4.3T a year</p>
+        <p>Next come plastering, tiling, painting, waterproofing and fit-out. Each is repetitive work referenced to chalk lines and walls. The perception and learning stay the same. Only the tool and the demonstrations change.</p>
+      </li>
+      <li class="step" data-step="3" data-tally="6.1" data-share="39.5">
+        <h3>Module factories and installation</h3>
+        <p class="step__fig">39.5% cumulative, about KRW 6.1T a year</p>
+        <p>With a welding torch and a vacuum panel gripper, the same arm assembles frames and installs wall panels in off-site module factories. We then bring those assembly and installation skills back to metal work, windows and doors on site.</p>
+      </li>
+      <li class="step" data-step="4" data-tally="15.4" data-share="100">
+        <h3>The whole site</h3>
+        <p class="step__fig">About KRW 15T a year in apartment building cost</p>
+        <p>The goal is all of building construction, structure and earthwork included. The demonstrations and work data from every site become the starting point for the next trade.</p>
+      </li>
+    </ol>
+  </div>
+  <div class="wrap">
+    <p class="note">Shares cover the 19 trades of Korean apartment building work, shown as the top 10 trades plus the other 9 combined. Amounts are our estimate: about 250,000 units started per year times about KRW 61.5M of building cost per unit. The per-unit cost is the SH Godeok-Gangil Block 4 masonry cost of KRW 4.06M per unit divided by the 6.6% masonry share.</p>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="sec" id="team" aria-labelledby="team-h">
+  <div class="wrap grid">
+    <h2 id="team-h" class="sec__h">A team that knows both the site and the model</h2>
+    <div class="sec__body">
+      <p>Two of us managed construction at major Korean contractors. One of us comes from an AI startup. All three of us research construction AI at Yonsei University.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="people">
+      <li>
+        <h3>Kichang Choi <span>CEO</span></h3>
+        <p class="people__role">Leads the company, robot design, learning models</p>
+        <p>Ph.D. candidate in Civil and Environmental Engineering, Yonsei University. 3.5 years in construction management at Ssangyong E&amp;C. First author in Automation in Construction and Advanced Engineering Informatics. Runs a nationwide water-level forecasting service unattended, 24 hours a day.</p>
+      </li>
+      <li>
+        <h3>Hyunwook Park <span>Co-founder</span></h3>
+        <p class="people__role">Action models, simulation learning, finance</p>
+        <p>Integrated M.S./Ph.D. student, Yonsei University. 1 year 8 months in building construction at DL E&amp;C. CFA Level I, licensed Architectural Engineer.</p>
+      </li>
+      <li>
+        <h3>Dayeon Kang <span>Co-founder</span></h3>
+        <p class="people__role">Demonstration data, business development</p>
+        <p>M.S. student, Yonsei University. Previously at an AI startup. Excellence Award, LH National Land Development Technology Competition.</p>
+      </li>
+    </ul>
+    <p class="lab">Research home. Smart Infrastructure Lab, led by Prof. Hongjo Kim, Department of Civil and Environmental Engineering, Yonsei University. 42 international journal papers and 20 patents granted or pending, across computer vision, 3D, physics-informed AI and engineering agents.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="sec sec--contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap grid">
+    <h2 id="contact-h" class="sec__h">Let's talk</h2>
+    <div class="sec__body">
+      <p>We will send our investor deck and prototype videos by email. We are also looking for contractors and module manufacturers to run a site PoC with us.</p>
+      <p class="contact">
+        <a class="btn" href="mailto:amki1027@yonsei.ac.kr?subject=MANTA%20Robotics%20investor%20materials">amki1027@yonsei.ac.kr</a>
+      </p>
+      <p class="addr">Engineering Hall 1, Yonsei University, 50 Yonsei-ro, Seodaemun-gu, Seoul, Korea</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>© 2026 MANTA Robotics</span>
+    <a href="/">Kichang Choi</a>
+  </div>
+</footer>
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

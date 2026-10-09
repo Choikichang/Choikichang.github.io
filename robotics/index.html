@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MANTA Robotics</title>
+<meta name="description" content="MANTA Robotics는 아파트 실내 조적을 무인화하는 이동형 로봇을 만듭니다. 먹선을 읽어 2mm 안에 블록을 놓고, 사람의 시연으로 배운 정책으로 움직입니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MANTA Robotics">
+<meta property="og:description" content="조적에서 시작해 현장 전체를 짓는 건설 로봇. 연세대학교 실험실 창업팀.">
+<meta property="og:image" content="https://choikichang.github.io/robotics/assets/og.png">
+<link rel="preload" as="image" href="assets/hero-photo.jpg">
+<meta property="og:url" content="https://choikichang.github.io/robotics/">
+<link rel="alternate" hreflang="ko" href="https://choikichang.github.io/robotics/">
+<link rel="alternate" hreflang="en" href="https://choikichang.github.io/robotics/en/">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#top" aria-label="MANTA Robotics 처음으로">
+      <svg class="brand__mark" viewBox="0 0 40 24" aria-hidden="true"><path d="M20 3c-3 0-5 2-7 4C10 9 5 10 1 9c3 3 7 5 11 5 1 0 2 1 3 2l5 6 5-6c1-1 2-2 3-2 4 0 8-2 11-5-4 1-9 0-12-2-2-2-4-4-7-4z" fill="currentColor"/></svg>
+      <span>MANTA Robotics</span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#localize">위치 추정</a>
+      <a href="#learning">학습</a>
+      <a href="#robot">로봇</a>
+      <a href="#progress">진행</a>
+      <a href="#vision">비전</a>
+      <a href="#team">팀</a>
+    </nav>
+    <a class="lang" href="en/" hreflang="en" lang="en">EN</a>
+    <a class="btn btn--small" href="mailto:amki1027@yonsei.ac.kr?subject=MANTA%20Robotics%20IR%20%EC%9E%90%EB%A3%8C%20%EC%9A%94%EC%B2%AD">IR 자료 요청</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap hero__text">
+    <h1>조적에서 시작해<br>현장 전체를 짓습니다</h1>
+    <p class="lede">MANTA Robotics는 아파트 실내 조적을 무인화하는 이동형 로봇을 만듭니다. 바닥의 먹선을 읽어 2mm 안에 블록을 놓고, 사람의 시연으로 배운 정책으로 움직입니다.</p>
+    <p class="hero__actions">
+      <a class="btn" href="mailto:amki1027@yonsei.ac.kr?subject=MANTA%20Robotics%20IR%20%EC%9E%90%EB%A3%8C%20%EC%9A%94%EC%B2%AD">IR 자료 요청</a>
+      <a class="link" href="#localize">기술 살펴보기</a>
+    </p>
+  </div>
+
+  <figure class="elevation">
+    <div class="elevation__band">
+    <div class="elevation__stage">
+      <img src="assets/hero-photo.jpg" width="1619" height="994" alt="MANTA 로봇 암. 왼쪽의 수직 Z축 레일에 알루미늄 트러스 링크 두 개가 수평으로 이어지고, 끝에 손목 서보와 그리퍼, 손목 카메라가 달려 있다.">
+      <svg class="dims" viewBox="0 -90 1619 994" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <!-- Z rail height -->
+        <g class="dim">
+          <line x1="285" y1="22" x2="285" y2="900"/>
+          <line x1="265" y1="22" x2="305" y2="22" class="tick"/>
+          <line x1="265" y1="900" x2="305" y2="900" class="tick"/>
+          <text x="267" y="461" transform="rotate(-90 267 461)" text-anchor="middle">Z축 레일 444</text>
+        </g>
+        <!-- horizontal reach -->
+        <g class="dim">
+          <line x1="497" y1="370" x2="1322" y2="370"/>
+          <line x1="497" y1="350" x2="497" y2="455" class="ext"/>
+          <line x1="1322" y1="350" x2="1322" y2="465" class="ext"/>
+          <text x="910" y="352" text-anchor="middle">수평 도달 약 430</text>
+        </g>
+        <!-- callouts -->
+        <g class="call">
+          <circle cx="497" cy="488" r="7"/>
+          <line x1="497" y1="488" x2="570" y2="635"/>
+          <text x="578" y="660">J1 DM4310</text>
+        </g>
+        <g class="call">
+          <circle cx="962" cy="488" r="7"/>
+          <line x1="962" y1="488" x2="1020" y2="635"/>
+          <text x="1028" y="660">J2 DM4310</text>
+        </g>
+        <g class="call">
+          <circle cx="1300" cy="495" r="7"/>
+          <line x1="1300" y1="495" x2="1385" y2="420"/>
+          <text x="1393" y="416">손목 STS3215</text>
+        </g>
+        <g class="call">
+          <circle cx="1320" cy="800" r="7"/>
+          <line x1="1320" y1="800" x2="1190" y2="840"/>
+          <text x="1182" y="852" text-anchor="end">그리퍼 SE90</text>
+        </g>
+      </svg>
+    </div>
+    </div>
+    <!-- chalk line: snapped once on load -->
+    <div class="chalk" aria-hidden="true"><span class="chalk__line"></span></div>
+    <figcaption class="wrap elevation__cap">
+      <span>현재 설계 L1 v3를 실사로 렌더링한 이미지. 알루미늄 금속 시제품은 제작 중입니다. 단위 mm.</span>
+      <span class="elevation__tol">먹선 기준 배치 오차 목표 2mm 이내</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Why masonry -->
+<section class="sec" id="why" aria-labelledby="why-h">
+  <div class="wrap grid">
+    <h2 id="why-h" class="sec__h">사람을 구하지 못해 멈추는 공종</h2>
+    <div class="sec__body">
+      <p>조적은 건설 공종 가운데 고령화와 노임 상승이 가장 빠른 축에 듭니다. 조적 로봇은 이미 있습니다. 하지만 대부분 트럭에 싣는 외벽용 대형 장비입니다. 세대 출입구를 지나 화장실과 발코니 벽을 쌓는 로봇은 아직 없습니다. 우리는 그 빈자리에서 시작합니다.</p>
+      <dl class="facts">
+        <div><dt>29.4%</dt><dd>60대 이상 건설 기능인력 비중<small>건설근로자공제회, 2026년 5월</small></dd></div>
+        <div><dt>27만 원</dt><dd>조적공 1일 노임<small>2026 상반기 건설업 임금실태조사</small></dd></div>
+        <div><dt>약 6천억 원</dt><dd>연간 아파트 세대 내 조적공사비<small>연 착공 24~27만 호 × 세대당 230만 원, 자체 추정</small></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Chalk-line localization -->
+<section class="sec sec--feature" id="localize" aria-labelledby="loc-h">
+  <div class="wrap grid">
+    <h2 id="loc-h" class="sec__h">먹선을 지도로 씁니다</h2>
+    <div class="sec__body">
+      <p>현장에는 이미 좌표가 그려져 있습니다. 먹매김 단계에서 바닥과 벽에 남긴 먹선입니다. 텅 빈 콘크리트 세대 안에서는 일반 SLAM이 붙잡을 특징점이 적어 위치 오차가 쌓입니다.</p>
+      <p>MANTA는 카메라로 먹선을 인식해 시공 기준선에 대한 로봇의 위치와 방향을 직접 구합니다. 이동하며 쌓인 오차는 먹선을 다시 볼 때마다 기준선에 맞춰 되돌립니다. 블록을 놓기 직전에는 한 번 더 먹선 좌표로 위치를 보정합니다.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="plan">
+      <svg viewBox="0 0 960 360" role="img" aria-labelledby="plan-t plan-d">
+        <title id="plan-t">먹선 기반 위치 보정 개념도</title>
+        <desc id="plan-d">세대 평면 위에 먹선 두 줄이 그어져 있다. 로봇의 추정 경로는 먹선 X1을 따라 이동하며 점점 벗어나지만, 먹선 Y3를 지날 때 기준선으로 다시 맞춰지고, 블록을 놓기 직전에 한 번 더 보정된다.</desc>
+        <rect x="20" y="20" width="920" height="320" class="plan__room"/>
+        <line x1="20" y1="250" x2="940" y2="250" class="plan__chalk"/>
+        <line x1="640" y1="20" x2="640" y2="340" class="plan__chalk"/>
+        <text x="30" y="242" class="plan__label">먹선 X1</text>
+        <text x="648" y="40" class="plan__label">먹선 Y3</text>
+        <path d="M80 214 C 260 212, 470 198, 640 176" class="plan__drift"/>
+        <path d="M640 176 L 640 214" class="plan__drift"/>
+        <path d="M80 214 L 760 214" class="plan__true"/>
+        <g class="plan__fix"><circle cx="640" cy="214" r="9"/><circle cx="752" cy="214" r="9"/></g>
+        <text x="628" y="160" text-anchor="end" class="plan__note">먹선 Y3를 지나며 위치 재설정</text>
+        <text x="800" y="185" text-anchor="middle" class="plan__note">배치 직전 보정</text>
+        <rect x="770" y="196" width="60" height="36" class="plan__block"/>
+        <text x="800" y="275" text-anchor="middle" class="plan__note">블록</text>
+      </svg>
+      <figcaption>
+        <span class="key key--drift">보정 없는 추정 경로</span>
+        <span class="key key--true">먹선 기준 경로</span>
+      </figcaption>
+    </figure>
+
+    <div class="pair">
+      <figure>
+        <img src="assets/vision-detect.jpg" width="1200" height="500" loading="lazy" alt="손목 카메라와 고정 카메라 두 화면에서 배치 목표 영역을 초록과 파랑 마스크로 인식한 모습">
+        <figcaption>손목 카메라와 고정 카메라로 배치 목표 영역을 인식하는 연구실 실험. 약 28 FPS.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/sim-newton.jpg" width="1800" height="990" loading="lazy" alt="물리 시뮬레이터에서 이동 로봇이 바닥의 선을 따라 블록 사이를 이동하는 장면. 여러 환경이 동시에 실행되고 있다.">
+        <figcaption>Newton 물리 엔진에서 16개 환경을 병렬로 돌려 기준선 추종 이동을 학습하는 장면.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Learning pipeline -->
+<section class="sec" id="learning" aria-labelledby="learn-h">
+  <div class="wrap grid">
+    <div class="sec__side">
+      <h2 id="learn-h" class="sec__h">사람에게 배우고, 시뮬레이션에서 늘리고, 현장에서 맞춥니다</h2>
+      <figure class="side-fig">
+        <img src="assets/proto-teleop.jpg" width="1140" height="720" loading="lazy" alt="연구원이 3D 프린트로 만든 로봇 암을 원격 조작하며 시연 데이터를 수집하는 모습">
+        <figcaption>3D 프린트 시제품으로 원격 조작 시연 데이터를 수집하는 모습. 2026년 9월.</figcaption>
+      </figure>
+    </div>
+    <div class="sec__body">
+      <p>좌표를 하나하나 입력하는 기존 산업용 로봇은 작업이 바뀔 때마다 다시 가르쳐야 합니다. MANTA의 로봇은 숙련공의 시연을 보고 배웁니다. 새 작업은 시연 50~100회로 초기 정책을 만들고, 도구만 바꿔 같은 로봇이 다른 공정을 맡습니다.</p>
+      <ol class="steps">
+        <li><h3>현장 1인칭 시연</h3><p>숙련공이 머리에 단 카메라로 손, 시선, 작업 장면을 기록합니다.</p></li>
+        <li><h3>텔레오퍼레이션</h3><p>리더 암으로 로봇을 직접 조종해 로봇 관점의 시연 데이터를 쌓습니다.</p></li>
+        <li><h3>시뮬레이션 강화학습</h3><p>디지털 트윈에서 대규모로 학습한 정책을 실제 로봇으로 옮깁니다.</p></li>
+        <li><h3>먹선 기준 보정</h3><p>놓기 직전 먹선 좌표로 위치를 다시 맞춰 2mm 안에 정렬합니다.</p></li>
+        <li><h3>모르타르 협조 시공</h3><p>토출 암이 모르타르를 바르고 배치 암이 블록을 놓는 과정을 한 사이클로 묶습니다.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Robot -->
+<section class="sec" id="robot" aria-labelledby="robot-h">
+  <div class="wrap grid">
+    <h2 id="robot-h" class="sec__h">로봇 암은 직접 설계하고 직접 만듭니다</h2>
+    <div class="sec__body">
+      <p>시판 협동로봇은 제어기가 닫혀 있어 학습 정책을 올리기 어렵고, 본체만 4천만 원이 넘습니다. 그래서 암을 직접 설계했습니다. 3D 프린트 버전으로 구동과 모방학습을 검증했고, 지금은 알루미늄 구조로 옮기고 있습니다. 암 한 대의 제작원가는 약 300만 원입니다.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="viewer">
+      <div class="viewer__tabs" role="tablist" aria-label="도면 보기 방향">
+        <button role="tab" aria-selected="true" aria-controls="view" data-src="assets/cad-iso_tr.png" data-alt="로봇 암 등각도">등각</button>
+        <button role="tab" aria-selected="false" aria-controls="view" data-src="assets/cad-front.png" data-alt="로봇 암 정면도">정면</button>
+        <button role="tab" aria-selected="false" aria-controls="view" data-src="assets/cad-top.png" data-alt="로봇 암 평면도">평면</button>
+        <button role="tab" aria-selected="false" aria-controls="view" data-src="assets/cad-right.png" data-alt="로봇 암 측면도">측면</button>
+      </div>
+      <div class="viewer__img" id="view" role="tabpanel">
+        <img src="assets/cad-iso_tr.png" alt="로봇 암 등각도" loading="lazy">
+      </div>
+      <table class="spec">
+        <caption>현재 설계 사양</caption>
+        <tbody>
+          <tr><th scope="row">구조</th><td>수직 Z축과 수평 2관절, 손목 회전</td></tr>
+          <tr><th scope="row">Z축</th><td>리니어 레일 444 mm</td></tr>
+          <tr><th scope="row">J1, J2</th><td>DM4310 관절 모듈</td></tr>
+          <tr><th scope="row">손목</th><td>STS3215 서보</td></tr>
+          <tr><th scope="row">그리퍼</th><td>SE90 자가 체결형, 90 mm</td></tr>
+          <tr><th scope="row">손목 카메라</th><td>GoPro HERO11</td></tr>
+          <tr><th scope="row">링크</th><td>알루미늄 판재 트러스</td></tr>
+          <tr><th scope="row">수평 도달</th><td>약 430 mm</td></tr>
+          <tr><th scope="row">제작원가</th><td>암 1대 약 300만 원</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pair pair--uneven">
+      <figure>
+        <img src="assets/proto-arm.jpg" width="1800" height="990" loading="lazy" alt="연구실 책상 위의 흰색 3D 프린트 로봇 암. 수직 볼스크루 레일에 트러스 링크 두 개와 그리퍼가 달려 있다.">
+        <figcaption>3D 프린트 시제품. 연구실에서 구동과 모방학습을 검증했습니다.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/concept-mobile.jpg" width="1672" height="941" loading="lazy" alt="콘크리트 실내에서 블록 벽 옆에 선 이동형 조적 로봇 구상도">
+        <figcaption>이동형 조적 로봇 구상도. 실제 사진이 아니라 AI로 만든 이미지입니다. 배치 암과 모르타르 토출 암을 바퀴형 플랫폼에 올리고, 세대 출입구 0.9m 통과를 목표로 합니다.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Progress -->
+<section class="sec" id="progress" aria-labelledby="prog-h">
+  <div class="wrap grid">
+    <h2 id="prog-h" class="sec__h">지금까지 온 곳</h2>
+    <div class="sec__body">
+      <p>요소기술을 연구실에서 검증한 TRL 3 단계입니다. 현장 PoC로 TRL 6을 검증하는 것이 다음 목표입니다.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stages">
+      <section class="stage stage--done" aria-labelledby="st1">
+        <h3 id="st1">완료</h3>
+        <ul>
+          <li>텔레오퍼레이션 시연 데이터 수집</li>
+          <li>모방학습 정책 학습과 구동 검증</li>
+          <li>로봇 암 설계와 3D 프린트 시제품</li>
+          <li>시뮬레이션에서 15kg 부재 배치 약 1분, 사람 대비 1.5~2배</li>
+          <li>등록특허 1건, 출원 1건, 국제 저널</li>
+        </ul>
+      </section>
+      <section class="stage stage--now" aria-labelledby="st2">
+        <h3 id="st2">진행 중</h3>
+        <ul>
+          <li>알루미늄 금속 구조 전환</li>
+          <li>모르타르 펌프와 토출 암 개발</li>
+          <li>디지털 트윈 구축</li>
+          <li>조적 동작 시간과 정밀도 실측</li>
+        </ul>
+      </section>
+      <section class="stage stage--next" aria-labelledby="st3">
+        <h3 id="st3">다음</h3>
+        <ul>
+          <li>현장 투입용 시제품 로봇 제작</li>
+          <li>공동주택 현장 12개월 PoC</li>
+        </ul>
+        <table class="kpi">
+          <caption>PoC 검증 목표</caption>
+          <tbody>
+            <tr><th scope="row">블록 위치 오차</th><td>2 mm 이내</td></tr>
+            <tr><th scope="row">모르타르 토출 정량</th><td>±5%</td></tr>
+            <tr><th scope="row">재시도 없는 배치 성공률</th><td>90% 이상</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- Vision -->
+<section class="sec" id="vision" aria-labelledby="vis-h">
+  <div class="wrap grid">
+    <h2 id="vis-h" class="sec__h">같은 파이프라인에 도구만 바꿉니다</h2>
+    <div class="sec__body">
+      <p>먹선과 벽체 인식, 시연 학습, 시뮬레이션 학습은 공종이 바뀌어도 그대로 씁니다. 바뀌는 것은 로봇 손끝의 도구와 학습 데이터입니다. 조적에서 검증한 방식을 실내 마감 공종으로, 다시 모듈 공장과 건설 현장 전체로 넓힙니다.</p>
+    </div>
+  </div>
+  <div class="wrap scrolly" data-step="1">
+    <div class="scrolly__chart">
+      <div class="stack" aria-hidden="true">
+        <div class="blk" data-g="4" style="--h:5.4"><span class="blk__l">기초·토공 5.4%</span></div>
+        <div class="blk" data-g="4" style="--h:36"><span class="blk__l">철근콘크리트 36%</span></div>
+        <div class="blk" data-g="1" style="--h:6.6"><span class="blk__l">조적 6.6%</span></div>
+        <div class="blk" data-g="2" style="--h:4.6"><span class="blk__l">방수 4.6%</span></div>
+        <div class="blk" data-g="2" style="--h:2.5"><span class="blk__l">미장 2.5%</span></div>
+        <div class="blk" data-g="3" style="--h:4.4"><span class="blk__l">금속 4.4%</span></div>
+        <div class="blk" data-g="3" style="--h:7"><span class="blk__l">창호 7%</span></div>
+        <div class="blk" data-g="2" style="--h:1.7"><span class="blk__l">타일 1.7%</span></div>
+        <div class="blk" data-g="2" style="--h:9.4"><span class="blk__l">수장 9.4%</span></div>
+        <div class="blk" data-g="2" style="--h:3.3"><span class="blk__l">도장 3.3%</span></div>
+        <div class="blk" data-g="4" style="--h:19.1"><span class="blk__l">나머지 9개 공종 19.1%</span></div>
+      </div>
+      <p class="tally" aria-live="polite">
+        <span class="tally__label">로봇이 맡는 공사비</span>
+        <strong class="tally__num"><span data-tally>1.0</span>조 원</strong>
+        <span class="tally__share">연간, 건축공사비의 <span data-share>6.6</span>%</span>
+      </p>
+    </div>
+
+    <ol class="steps-v">
+      <li class="step" data-step="1" data-tally="1.0" data-share="6.6">
+        <h3>조적</h3>
+        <p class="step__fig">건축공사비의 6.6%, 연 약 1.0조 원</p>
+        <p>아파트 세대 내 비내력 벽에서 시작합니다. 화장실, 발코니, PD, 칸막이 벽입니다. 사람을 구하기 가장 어렵고, 먹선 기준이 가장 분명한 공종입니다.</p>
+      </li>
+      <li class="step" data-step="2" data-tally="4.3" data-share="28.1">
+        <h3>실내 마감</h3>
+        <p class="step__fig">누적 28.1%, 연 약 4.3조 원</p>
+        <p>미장, 타일, 도장, 방수, 수장을 더합니다. 모두 먹선과 벽체를 기준으로 반복하는 작업입니다. 인식 모델과 학습 방식은 그대로 두고 손끝의 도구와 시연 데이터만 바꿉니다.</p>
+      </li>
+      <li class="step" data-step="3" data-tally="6.1" data-share="39.5">
+        <h3>모듈 공장과 설치 공종</h3>
+        <p class="step__fig">누적 39.5%, 연 약 6.1조 원</p>
+        <p>같은 로봇 암에 용접 토치와 패널 흡착 그리퍼를 달면 OSC 모듈 공장의 골조 조립과 벽체 패널 설치를 맡습니다. 공장에서 검증한 조립과 설치 기술을 현장의 금속, 창호 공종으로 가져옵니다.</p>
+      </li>
+      <li class="step" data-step="4" data-tally="15.4" data-share="100">
+        <h3>건설 현장 전체</h3>
+        <p class="step__fig">공동주택 건축공사비 연 약 15조 원</p>
+        <p>골조와 토공까지 포함한 건축공사 전체가 목표입니다. 현장마다 쌓인 시연과 작업 데이터가 다음 공종의 출발점이 됩니다.</p>
+      </li>
+    </ol>
+  </div>
+  <div class="wrap">
+    <p class="note">공종 비중은 공동주택 건축공사 19개 공종 기준이며, 상위 10개 공종과 나머지 9개 공종의 합으로 나타냈습니다. 금액은 연 착공 약 25만 호에 세대당 건축공사비 약 6,150만 원을 곱한 자체 추정치입니다. 세대당 건축공사비는 SH 고덕강일 4단지 준공원가의 세대당 조적공사비 406만 원을 조적 비중 6.6%로 나눠 구했습니다.</p>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="sec" id="team" aria-labelledby="team-h">
+  <div class="wrap grid">
+    <h2 id="team-h" class="sec__h">건설 현장과 AI 연구를 모두 아는 팀</h2>
+    <div class="sec__body">
+      <p>대형 건설사에서 시공을 관리한 두 사람과 AI 스타트업 출신 한 사람이 모였습니다. 세 사람 모두 연세대학교에서 건설 AI를 연구합니다.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="people">
+      <li>
+        <h3>최기창 <span>대표</span></h3>
+        <p class="people__role">총괄, 로봇 설계, 학습 모델</p>
+        <p>연세대학교 토목환경공학 박사과정. 쌍용건설 시공 관리 3년 6개월. Automation in Construction, Advanced Engineering Informatics 제1저자. 전국 수위예측 서비스를 24시간 무인으로 운영 중입니다.</p>
+      </li>
+      <li>
+        <h3>박현욱 <span>공동창업</span></h3>
+        <p class="people__role">행동 모델, 시뮬레이션 학습, 재무</p>
+        <p>연세대학교 석박사통합과정. DL E&amp;C 건축시공 1년 8개월. CFA Level I, 건축기사.</p>
+      </li>
+      <li>
+        <h3>강다연 <span>공동창업</span></h3>
+        <p class="people__role">시연 데이터, 사업 개발</p>
+        <p>연세대학교 석사과정. AI 스타트업 근무. LH 국토개발기술대전 우수상.</p>
+      </li>
+    </ul>
+    <p class="lab">연구 기반. 연세대학교 건설환경공학과 김홍조 교수 연구실(Smart Infrastructure Lab). 국제 저널 42편, 특허 등록과 출원 20건. 컴퓨터 비전, 3D, 물리 정보 AI, 공학 에이전트를 연구합니다.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="sec sec--contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap grid">
+    <h2 id="contact-h" class="sec__h">이야기를 나누고 싶습니다</h2>
+    <div class="sec__body">
+      <p>IR 자료와 시제품 구동 영상은 메일로 보내드립니다. 현장 PoC를 함께할 건설사와 모듈 제작사도 찾고 있습니다.</p>
+      <p class="contact">
+        <a class="btn" href="mailto:amki1027@yonsei.ac.kr?subject=MANTA%20Robotics%20IR%20%EC%9E%90%EB%A3%8C%20%EC%9A%94%EC%B2%AD">amki1027@yonsei.ac.kr</a>
+      </p>
+      <p class="addr">서울특별시 서대문구 연세로 50, 연세대학교 제1공학관</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>© 2026 MANTA Robotics</span>
+    <a href="/">최기창 개인 페이지</a>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

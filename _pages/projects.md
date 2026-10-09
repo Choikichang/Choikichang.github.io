@@ -11,6 +11,13 @@ author_profile: true
   <a href="/ko/projects/" style="padding: 0.5em 1em; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333;">🇰🇷 한국어</a>
 </div>
 
+## MANTA Robotics · Construction Robotics Startup
+
+<div style="padding: 18px 20px; border: 1px solid #c6c8c2; border-left: 4px solid #2457c9; background: #ecece8; margin-bottom: 20px; color: #1c2a3a;">
+  <p style="margin: 0 0 12px;">A Yonsei lab startup building a mobile robot that automates interior masonry in apartment construction. It reads chalk lines on the slab to place blocks within 2 mm, using policies learned from human demonstration.</p>
+  <a href="/robotics/en/" style="display: inline-block; padding: 9px 18px; background: #1c2a3a; color: #dcddd8; text-decoration: none; border-radius: 2px;">Visit MANTA Robotics</a>
+</div>
+
 ## Autonomous Evolutionary AI-Based Smart Sensing Platform for Levee Failures (MANTA)
 
 <div style="padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; margin-bottom: 20px; color: white;">
