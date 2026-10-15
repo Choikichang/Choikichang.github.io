@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kichang Choi CV</title>
+<style>
+@page { size: A4; margin: 16mm 17mm 16mm 17mm; }
+:root { --ink: #1c2a3a; --soft: #55606d; --rule: #c9ccd1; --accent: #2457c9; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font-family: "TeX Gyre Pagella", "Palatino Linotype", Palatino, serif; font-size: 9.6pt; line-height: 1.38; color: var(--ink); }
+a { color: inherit; text-decoration: none; }
+header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1.2pt solid var(--ink); padding-bottom: 7pt; margin-bottom: 4pt; }
+h1 { margin: 0; font-size: 23pt; font-weight: 700; letter-spacing: .01em; line-height: 1; }
+.role { margin: 5pt 0 0; font-size: 10.2pt; }
+.contact { white-space: nowrap; text-align: right; font-size: 8.6pt; line-height: 1.45; color: var(--soft); }
+.contact b { color: var(--ink); font-weight: 400; }
+section { margin-top: 10pt; }
+h2 { font-size: 10.4pt; font-variant: small-caps; letter-spacing: .06em; font-weight: 700; margin: 0 0 4pt; padding-bottom: 2pt; border-bottom: .5pt solid var(--rule); }
+.row { display: grid; grid-template-columns: 27mm 1fr; column-gap: 4mm; margin: 0 0 4.2pt; break-inside: avoid; }
+.when { color: var(--soft); font-size: 8.8pt; padding-top: .6pt; font-variant-numeric: tabular-nums; }
+.what b { font-weight: 700; }
+.what .sub { color: var(--soft); }
+.what ul { margin: 1.5pt 0 0; padding-left: 10pt; }
+.what li { margin: 0 0 .8pt; }
+ol.pubs { margin: 0; padding-left: 15pt; }
+ol.pubs li { margin: 0 0 3.4pt; padding-left: 2pt; break-inside: avoid; }
+.me { font-weight: 700; text-decoration: underline; text-underline-offset: 1.5pt; text-decoration-thickness: .5pt; }
+.venue { font-style: italic; }
+.doi { color: var(--soft); font-size: 8.5pt; }
+.tag { color: var(--accent); font-size: 8.4pt; }
+h3 { font-size: 9.4pt; font-weight: 700; margin: 6pt 0 2.5pt; color: var(--soft); }
+.interests { margin: 0; padding-left: 10pt; columns: 2; column-gap: 8mm; }
+.interests li { margin-bottom: 1pt; break-inside: avoid; }
+.skills .row { margin-bottom: 2.6pt; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Kichang Choi</h1>
+    <p class="role">Ph.D. Student, Civil and Environmental Engineering, Yonsei University<br>Founder and CEO, MANTA Robotics</p>
+  </div>
+  <div class="contact">
+    <b>amki1027@yonsei.ac.kr</b><br>
+    amki1027@gmail.com<br>
+    +82 10-3496-2257<br>
+    choikichang.github.io<br>
+    ORCID 0009-0002-2872-015X
+  </div>
+</header>
+
+<section>
+  <h2>Research Interests</h2>
+  <ul class="interests">
+    <li>Retrieval-augmented generation and multi-agent LLMs for engineering</li>
+    <li>Embedding models for construction knowledge</li>
+    <li>Learning-based construction robotics: imitation learning and sim-to-real RL</li>
+    <li>Chalk-line based localization for on-site robot positioning</li>
+    <li>Time-series forecasting for flood and levee early warning</li>
+    <li>Vision-based construction material quality control</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="row"><div class="when">Mar 2023 – Present</div><div class="what"><b>Ph.D. in Civil and Environmental Engineering</b>, Yonsei University, Seoul, Korea<br><span class="sub">Smart Infrastructure Lab. Advisor: Prof. Hongjo Kim. GPA 4.09 / 4.5</span></div></div>
+  <div class="row"><div class="when">Mar 2013 – Feb 2019</div><div class="what"><b>B.S. in Architectural Engineering</b>, Dankook University, Yongin, Korea<br><span class="sub">GPA 3.43 / 4.5</span></div></div>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div class="row"><div class="when">2026 – Present</div><div class="what"><b>Founder and CEO</b>, MANTA Robotics (Yonsei University lab startup)
+    <ul>
+      <li>Building a mobile robot that automates interior masonry in apartment construction, using chalk-line localization and policies learned from human demonstration.</li>
+      <li>Designed an in-house SCARA-type arm (444 mm Z axis, DM4310 joints) at about KRW 3M build cost; validated teleoperation data collection and imitation learning on a 3D-printed prototype.</li>
+    </ul></div></div>
+  <div class="row"><div class="when">Mar 2023 – Present</div><div class="what"><b>Graduate Researcher</b>, Smart Infrastructure Lab, Yonsei University</div></div>
+  <div class="row"><div class="when">2019 – 2022</div><div class="what"><b>Construction Manager</b>, Ssangyong E&amp;C, Korea <span class="sub">(3 years 6 months)</span>
+    <ul>
+      <li>Managed structural work schedules and trade coordination, including core-first, top-down, CFT column and TU steel beam construction.</li>
+      <li>Led value engineering that cut about 200 t of rebar through structural redesign and about 90 t through gas pressure welding.</li>
+      <li>Reviewed shop drawings and execution plans, ran site inspections and produced site-specific BIM models.</li>
+    </ul></div></div>
+</section>
+
+<section>
+  <h2>Publications</h2>
+  <h3>Journal Articles</h3>
+  <ol class="pubs">
+    <li>Kim, S., Kim, T., <span class="me">Choi, K.</span>, Joo, S., Kim, H. (2026). Tiny object detection using Distance-guided, Signed, and Densified Learning (DSDL) for construction site safety monitoring. <span class="venue">Automation in Construction</span>, 187, 106929. <span class="doi">doi:10.1016/j.autcon.2026.106929</span></li>
+    <li><span class="me">Choi, K.</span>, Jeong, M., Kim, T., Kim, S., Baek, S., Kim, H. (2026). RAMASC: A retrieval-augmented multi-agent framework for automated structural calculation. <span class="venue">Advanced Engineering Informatics</span>, 74, 104698. <span class="doi">doi:10.1016/j.aei.2026.104698</span></li>
+    <li><span class="me">Choi, K.</span>, Jeong, M., Shin, Y., Ma, J., Kim, K., Kim, H. (2026). Retrieval optimization for construction documents in low-resource languages using contrastive sentence generation and Matryoshka representation learning. <span class="venue">Automation in Construction</span>, 182, 106749. <span class="doi">doi:10.1016/j.autcon.2025.106749</span></li>
+    <li>Idrees, S., Nugraha, J.A., Tahir, S., <span class="me">Choi, K.</span>, Choi, J., Ryu, D.H., Kim, J.H. (2024). Automatic concrete slump prediction of concrete batching plant by deep learning. <span class="venue">Developments in the Built Environment</span>.</li>
+    <li>Basha, S.I., Nugraha, J.A., Rehman, A.U., <span class="me">Choi, K.</span>, Park, S., Kim, J.H. (2024). Structuration and yield strength characterization of hybrid alkali-activated cement composites (HACC) for ultra-rapid 3D construction printing. <span class="venue">Construction and Building Materials</span>.</li>
+    <li>Rehman, A.U., Kang, M., Basha, S.I., <span class="me">Choi, K.</span>, Kim, J.H. (2024). Knife cut test of concrete: The introduction of a new test method for measurement of the structural build-up of 3D concrete printing materials. <span class="venue">RILEM Bookseries</span>, Springer.</li>
+    <li>Rehman, A.U., Basha, S.I., <span class="me">Choi, K.</span>, Kang, M., Kim, J.H. (2024). An analysis of penetrometer test methods for structural build-up in stiff and accelerated 3D concrete printing mixtures. Springer.</li>
+  </ol>
+  <h3>Under Review</h3>
+  <ol class="pubs" start="8">
+    <li><span class="me">Choi, K.</span>, Shin, Y., Kim, Y., Osman, K., Kim, H. (2026). MANTA: Multivariate attention network for short-term water-level forecasting. Preprint, <span class="venue">SSRN</span> 6479487. <span class="tag">Deployed as a nationwide live forecasting service</span></li>
+  </ol>
+  <h3>Conference Papers and Presentations</h3>
+  <ol class="pubs" start="9">
+    <li><span class="me">Choi, K.</span>, Baek, S., Ma, J., Kim, H. (2025). Efficient RAG (retrieval-augmented generation) for construction in low-resource language. <span class="venue">Proceedings of the 42nd ISARC</span>, Montreal, Canada, 1575–1581. Oral. <span class="doi">doi:10.22260/ISARC2025/0206</span></li>
+    <li><span class="me">Choi, K.</span>, Baek, S., Kim, H. (2024). Enhancing the performance of retrieval-augmented generation in the Korean construction domain through embedding model fine-tuning. <span class="venue">KICEM Annual Conference</span>, Jeju, Korea. Oral.</li>
+    <li>Chern, W.C., <span class="me">Choi, K.</span>, Asari, V., Kim, H. (2024). <span class="venue">10th International Conference on Construction Engineering and Project Management (ICCEPM)</span>, Sapporo, Japan. Oral.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Research Projects</h2>
+  <div class="row"><div class="when">2026 – Present</div><div class="what"><b>Learning-based mobile masonry robot for apartment interiors</b><br><span class="sub">MANTA Robotics. Lead</span><br>Teleoperation and first-person demonstration datasets, imitation learning, reinforcement learning in simulation (Newton, 16 parallel environments) and chalk-line based localization targeting 2 mm placement accuracy.</div></div>
+  <div class="row"><div class="when">Aug 2024 – Present</div><div class="what"><b>Autonomous evolutionary AI-based smart sensing platform for early detection and proactive response to levee failures</b><br><span class="sub">National Research Foundation of Korea. Project Manager</span><br>Developed the MANTA water-level forecasting model; operates a nationwide real-time prediction service (sil.manta-pado.store).</div></div>
+  <div class="row"><div class="when">2024</div><div class="what"><b>Construct-RAG: contrastive sentence training and retrieval for construction documents</b><br><span class="sub">Project Manager</span><br>Dataset generation and embedding fine-tuning that outperformed OpenAI text-embedding-3-large on Korean construction retrieval.</div></div>
+  <div class="row"><div class="when">Mar 2023 – Present</div><div class="what"><b>Eugene concrete slump prediction framework</b><br><span class="sub">Software and deep learning developer</span><br>Optical-flow capture, CNN slump prediction and a PyQt/Docker application deployed in operating batching plants.</div></div>
+  <div class="row"><div class="when">2023</div><div class="what"><b>ABB robot-based automated vane testing for material rheology</b><br><span class="sub">Robot programming</span><br>Camera and depth-sensor guided ABB arm performing constant-speed vane tests on construction materials.</div></div>
+</section>
+
+<section>
+  <h2>Intellectual Property</h2>
+  <div class="row"><div class="when">Granted</div><div class="what">1 Korean patent</div></div>
+  <div class="row"><div class="when">Pending</div><div class="what">1 Korean patent application</div></div>
+</section>
+
+<section class="skills">
+  <h2>Skills</h2>
+  <div class="row"><div class="when">AI and ML</div><div class="what">Python, PyTorch, LangChain, RAG systems, embedding fine-tuning, Axolotl, multi-agent LLMs, imitation learning, reinforcement learning</div></div>
+  <div class="row"><div class="when">Robotics</div><div class="what">Autodesk Fusion mechanical design, URDF, teleoperation, Newton (MJWarp) and Omniverse simulation, ABB RobotStudio</div></div>
+  <div class="row"><div class="when">Software</div><div class="what">Docker, PyQt, web services for real-time model deployment</div></div>
+  <div class="row"><div class="when">Construction</div><div class="what">Revit and BIM, construction scheduling, value engineering, site inspection</div></div>
+</section>
+
+</body>
+</html>
